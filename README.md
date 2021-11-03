@@ -1,0 +1,1 @@
+# Edgehog Astarte Interfaces
