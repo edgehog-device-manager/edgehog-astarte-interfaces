@@ -1,0 +1,26 @@
+{
+    "interface_name": "io.edgehog.devicemanager.OTARequest",
+    "version_major": 0,
+    "version_minor": 1,
+    "type": "datastream",
+    "ownership": "server",
+    "aggregation": "object",
+    "mappings": [
+        {
+            "endpoint": "/request/url",
+            "type": "string",
+            "reliability": "guaranteed",
+            "database_retention_policy": "use_ttl",
+            "database_retention_ttl": 31556952,
+            "description": "File URL"
+        },
+        {
+            "endpoint": "/request/uuid",
+            "type": "string",
+            "reliability": "guaranteed",
+            "database_retention_policy": "use_ttl",
+            "database_retention_ttl": 31556952,
+            "description": "Request identifier"
+        }
+    ]
+}
