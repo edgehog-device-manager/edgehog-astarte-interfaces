@@ -1,5 +1,5 @@
 {
-  "interface_name": "io.edgehog.devicemanager.Storage",
+  "interface_name": "io.edgehog.devicemanager.StorageUsage",
   "version_major": 0,
   "version_minor": 1,
   "type": "datastream",
@@ -7,7 +7,7 @@
   "aggregation": "object",
   "mappings": [
     {
-      "endpoint": "/storage/%{label}/totalBytes",
+      "endpoint": "/%{label}/totalBytes",
       "type": "longinteger",
       "explicit_timestamp": true,
       "description": "Total storage size in bytes",
@@ -15,7 +15,7 @@
       "database_retention_ttl": 5184000
     },
     {
-      "endpoint": "/storage/%{label}/freeBytes",
+      "endpoint": "/%{label}/freeBytes",
       "type": "longinteger",
       "explicit_timestamp": true,
       "description": "Available storage bytes",
