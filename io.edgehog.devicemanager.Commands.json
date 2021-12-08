@@ -1,0 +1,15 @@
+{
+    "interface_name": "io.edgehog.devicemanager.Commands",
+    "version_major": 0,
+    "version_minor": 1,
+    "type": "datastream",
+    "ownership": "server",
+    "mappings": [
+        {
+            "endpoint": "/request",
+            "type": "string",
+            "explicit_timestamp": true,
+            "description": "Command request. Possible values  ['Reboot']"
+        }
+    ]
+}
