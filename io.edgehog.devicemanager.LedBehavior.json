@@ -6,7 +6,7 @@
   "ownership": "server",
   "mappings": [
     {
-      "endpoint": "/%{led_id}/behaviour",
+      "endpoint": "/%{led_id}/behavior",
       "type": "string",
       "description": "Enum describing the behavior of the given led. Possible values: [Blink60Seconds | DuobleBlink60Seconds | SlowBlink60Seconds]",
       "doc": "Blink60Seconds: Blinking\nDuobleBlink60Seconds: Double blinking\nSlowBlink60Seconds: Slow blinking",
