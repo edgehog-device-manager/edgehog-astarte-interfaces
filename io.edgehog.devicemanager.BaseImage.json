@@ -1,5 +1,5 @@
 {
-  "interface_name": "io.edgehog.devicemanager.OSBundle",
+  "interface_name": "io.edgehog.devicemanager.BaseImage",
   "version_major": 0,
   "version_minor": 1,
   "type": "properties",
