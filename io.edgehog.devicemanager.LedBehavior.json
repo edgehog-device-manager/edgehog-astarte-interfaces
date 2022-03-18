@@ -8,6 +8,7 @@
     {
       "endpoint": "/%{led_id}/behavior",
       "type": "string",
+      "reliability": "unique",
       "description": "Enum describing the behavior of the given led. Possible values: [Blink60Seconds | DoubleBlink60Seconds | SlowBlink60Seconds]",
       "doc": "Blink60Seconds: Blinking\nDoubleBlink60Seconds: Double blinking\nSlowBlink60Seconds: Slow blinking",
       "database_retention_policy": "use_ttl",
