@@ -9,7 +9,7 @@
         {
             "endpoint": "/response/uuid",
             "type": "string",
-            "reliability": "guaranteed",
+            "reliability": "unique",
             "database_retention_policy": "use_ttl",
             "database_retention_ttl": 31556952,
             "description": "Request identifier"
@@ -17,7 +17,7 @@
         {
             "endpoint": "/response/status",
             "type": "string",
-            "reliability": "guaranteed",
+            "reliability": "unique",
             "database_retention_policy": "use_ttl",
             "database_retention_ttl": 31556952,
             "description": "Possible values: [ InProgress | Error | Done ]"
@@ -25,7 +25,7 @@
         {
             "endpoint": "/response/statusCode",
             "type": "string",
-            "reliability": "guaranteed",
+            "reliability": "unique",
             "database_retention_policy": "use_ttl",
             "database_retention_ttl": 31556952
         }
