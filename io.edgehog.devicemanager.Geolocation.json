@@ -12,43 +12,57 @@
       "endpoint": "/%{id}/latitude",
       "type": "double",
       "explicit_timestamp": true,
-      "description": "Sampled latitude value."
+      "description": "Sampled latitude value.",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 5184000
     },
     {
       "endpoint": "/%{id}/longitude",
       "type": "double",
       "explicit_timestamp": true,
-      "description": "Sampled longitude value."
+      "description": "Sampled longitude value.",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 5184000
     },
     {
       "endpoint": "/%{id}/altitude",
       "type": "double",
       "explicit_timestamp": true,
-      "description": "Sampled altitude value."
+      "description": "Sampled altitude value.",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 5184000
     },
     {
       "endpoint": "/%{id}/accuracy",
       "type": "double",
       "explicit_timestamp": true,
-      "description": "Sampled accuracy of the latitude and longitude properties."
+      "description": "Sampled accuracy of the latitude and longitude properties.",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 5184000
     },
     {
       "endpoint": "/%{id}/altitudeAccuracy",
       "type": "double",
       "explicit_timestamp": true,
-      "description": "Sampled accuracy of the altitude property."
+      "description": "Sampled accuracy of the altitude property.",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 5184000
     },
     {
       "endpoint": "/%{id}/heading",
       "type": "double",
       "explicit_timestamp": true,
-      "description": "Sampled value representing the direction towards which the device is facing."
+      "description": "Sampled value representing the direction towards which the device is facing.",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 5184000
     },
     {
       "endpoint": "/%{id}/speed",
       "type": "double",
       "explicit_timestamp": true,
-      "description": "Sampled value representing the velocity of the device."
+      "description": "Sampled value representing the velocity of the device.",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 5184000
     }
   ]
 }
