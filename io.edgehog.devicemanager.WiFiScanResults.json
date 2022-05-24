@@ -1,7 +1,7 @@
 {
   "interface_name": "io.edgehog.devicemanager.WiFiScanResults",
   "version_major": 0,
-  "version_minor": 1,
+  "version_minor": 2,
   "type": "datastream",
   "ownership": "device",
   "aggregation": "object",
@@ -14,6 +14,14 @@
       "explicit_timestamp": true,
       "description": "The channel over which the client is communicating with the access point.",
       "doc": "The channel represents one of the ranges into which the reference frequency is divided and it's identified by an integer number in the range 1 - 165, depending on the frequency itself and the region."
+    },
+    {
+      "endpoint": "/ap/connected",
+      "type": "boolean",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 5184000,
+      "explicit_timestamp": true,
+      "description": "Identifies if the device is connected to this Access Point"
     },
     {
       "endpoint": "/ap/essid",
