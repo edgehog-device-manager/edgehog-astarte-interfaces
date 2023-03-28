@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Bump `io.edgehog.devicemanager.OTARequest` to 1.0 changing endpoints reliability to `unreliable` ([#51](https://github.com/edgehog-device-manager/edgehog-astarte-interfaces/issues/51)).
 
+### Removed
+- Remove `io.edgehog.devicemanager.OTAResponse` interface ([#56](https://github.com/edgehog-device-manager/edgehog-astarte-interfaces/issues/56)).
+
 
 ## [0.5.2] - 2022-06-22
 
