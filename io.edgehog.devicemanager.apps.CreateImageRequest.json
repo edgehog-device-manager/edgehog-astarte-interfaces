@@ -1,0 +1,26 @@
+{
+  "interface_name": "io.edgehog.devicemanager.apps.CreateImageRequest",
+  "version_major": 0,
+  "version_minor": 1,
+  "type": "datastream",
+  "ownership": "server",
+  "aggregation": "object",
+  "mappings": [
+    {
+      "endpoint": "/image/id",
+      "type": "string"
+    },
+    {
+      "endpoint": "/image/repo",
+      "type": "string"
+    },
+    {
+      "endpoint": "/image/name",
+      "type": "string"
+    },
+    {
+      "endpoint": "/image/tag",
+      "type": "string"
+    }
+  ]
+}
