@@ -1,0 +1,23 @@
+{
+  "interface_name": "io.edgehog.devicemanager.apps.CreateVolumeRequest",
+  "version_major": 0,
+  "version_minor": 1,
+  "type": "datastream",
+  "ownership": "server",
+  "aggregation": "object",
+  "mappings": [
+    {
+      "endpoint": "/volume/id",
+      "type": "string"
+    },
+    {
+      "endpoint": "/volume/driver",
+      "type": "string"
+    },
+    {
+      "endpoint": "/volume/options",
+      "type": "stringarray",
+      "doc": "An array of key=value options to set for the drive"
+    }
+  ]
+}

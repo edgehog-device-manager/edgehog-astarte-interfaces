@@ -1,0 +1,25 @@
+{
+  "interface_name": "io.edgehog.devicemanager.apps.AvailableVolumes",
+  "version_major": 0,
+  "version_minor": 1,
+  "type": "properties",
+  "ownership": "device",
+  "mappings": [
+    {
+      "allow_unset": true,
+      "endpoint": "/%{volume_id}/created",
+      "type": "boolean"
+    },
+    {
+      "allow_unset": true,
+      "endpoint": "/%{volume_id}/driver",
+      "type": "string"
+    },
+    {
+      "allow_unset": true,
+      "endpoint": "/%{volume_id}/options",
+      "type": "stringarray"
+      "doc": "An array of key=value options to set for the drive"
+    }
+  ]
+}
