@@ -1,0 +1,34 @@
+{
+  "interface_name": "io.edgehog.devicemanager.apps.AvailableNetworks",
+  "version_major": 0,
+  "version_minor": 1,
+  "type": "properties",
+  "ownership": "device",
+  "mappings": [
+    {
+      "allow_unset": true,
+      "endpoint": "/%{network_id}/id",
+      "type": "string"
+    },
+    {
+      "allow_unset": true,
+      "endpoint": "/%{network_id}/driver",
+      "type": "string"
+    },
+    {
+      "allow_unset": true,
+      "endpoint": "/%{network_id}/checkDuplicate",
+      "type": "boolean"
+    },
+    {
+      "allow_unset": true,
+      "endpoint": "/%{network_id}/internal",
+      "type": "boolean"
+    },
+    {
+      "allow_unset": true,
+      "endpoint": "/%{network_id}/enableIpv6",
+      "type": "boolean"
+    }
+  ]
+}

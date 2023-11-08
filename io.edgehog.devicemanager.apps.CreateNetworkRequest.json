@@ -1,0 +1,30 @@
+{
+  "interface_name": "io.edgehog.devicemanager.apps.CreateNetworkRequest",
+  "version_major": 0,
+  "version_minor": 1,
+  "type": "datastream",
+  "ownership": "server",
+  "aggregation": "object",
+  "mappings": [
+    {
+      "endpoint": "/network/id",
+      "type": "string"
+    },
+    {
+      "endpoint": "/network/driver",
+      "type": "string"
+    },
+    {
+      "endpoint": "/network/checkDuplicate",
+      "type": "boolean"
+    },
+    {
+      "endpoint": "/network/internal",
+      "type": "boolean"
+    },
+    {
+      "endpoint": "/network/enableIpv6",
+      "type": "boolean"
+    }
+  ]
+}
