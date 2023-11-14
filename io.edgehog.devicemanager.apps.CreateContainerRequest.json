@@ -1,0 +1,57 @@
+{
+  "interface_name": "io.edgehog.devicemanager.apps.CreateContainerRequest",
+  "version_major": 0,
+  "version_minor": 1,
+  "type": "datastream",
+  "ownership": "server",
+  "aggregation": "object",
+  "mappings": [
+    {
+      "endpoint": "/container/id",
+      "type": "string"
+    },
+    {
+      "endpoint": "/container/hostname",
+      "type": "string"
+    },
+    {
+      "endpoint": "/container/imageId",
+      "type": "string"
+    },
+    {
+      "endpoint": "/container/networkIds",
+      "type": "stringarray"
+    },
+    {
+      "endpoint": "/container/volumeIds",
+      "type": "stringarray"
+    },
+    {
+      "endpoint": "/container/restartPolicy",
+      "type": "string"
+    },
+    {
+      "endpoint": "/container/env",
+      "type": "stringarray",
+      "doc": "Array of KEY=value environment variables"
+    },
+    {
+      "endpoint": "/container/binds",
+      "type": "stringarray",
+      "doc": "Array of binds"
+    },
+    {
+      "endpoint": "/container/networks",
+      "type": "stringarray"
+    },
+    {
+      "endpoint": "/container/portBindings",
+      "type": "stringarray",
+      "doc": "Array of ip:[host_port:]container_port[/protocol] | [hostPort:]containerPort[/protocol]. protocol is tcp by default"
+    },
+    {
+      "endpoint": "/container/privileged",
+      "type": "boolean"
+    }
+  ]
+}
