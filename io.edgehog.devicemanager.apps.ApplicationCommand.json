@@ -1,0 +1,14 @@
+{
+  "interface_name": "io.edgehog.devicemanager.apps.ApplicationCommand",
+  "version_major": 0,
+  "version_minor": 1,
+  "type": "datastream",
+  "ownership": "server",
+  "mappings": [
+    {
+      "endpoint": "/%{release_id}/command",
+      "type": "string",
+      "doc": "command enum [start, stop]"
+    }
+  ]
+}
