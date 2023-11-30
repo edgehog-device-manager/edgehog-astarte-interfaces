@@ -1,0 +1,22 @@
+{
+  "interface_name": "io.edgehog.devicemanager.apps.CreateReleaseRequest",
+  "version_major": 0,
+  "version_minor": 1,
+  "type": "datastream",
+  "ownership": "server",
+  "aggregation": "object",
+  "mappings": [
+    {
+      "endpoint": "/release/id",
+      "type": "string"
+    },
+    {
+      "endpoint": "/release/applicationId",
+      "type": "string"
+    },
+    {
+      "endpoint": "/release/containers",
+      "type": "stringarray"
+    }
+  ]
+}
