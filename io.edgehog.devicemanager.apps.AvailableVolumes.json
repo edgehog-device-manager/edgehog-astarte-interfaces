@@ -8,17 +8,20 @@
     {
       "allow_unset": true,
       "endpoint": "/%{volume_id}/created",
-      "type": "boolean"
+      "type": "boolean",
+      "description": "Volume created"
     },
     {
       "allow_unset": true,
       "endpoint": "/%{volume_id}/driver",
-      "type": "string"
+      "type": "string",
+      "description": "Volume driver"
     },
     {
       "allow_unset": true,
       "endpoint": "/%{volume_id}/options",
-      "type": "stringarray"
+      "type": "stringarray",
+      "description": "Volume driver options",
       "doc": "An array of key=value options to set for the drive"
     }
   ]

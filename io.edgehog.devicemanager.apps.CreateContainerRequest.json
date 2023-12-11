@@ -8,50 +8,90 @@
   "mappings": [
     {
       "endpoint": "/container/id",
-      "type": "string"
+      "type": "string",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "description": "Create Container Request id",
+      "doc": "Unique id for the container."
     },
     {
       "endpoint": "/container/hostname",
-      "type": "string"
+      "type": "string",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "description": "Container hostname",
+      "doc": "The hostname to use for the container, as a valid RFC 1123 hostname."
     },
     {
       "endpoint": "/container/imageId",
-      "type": "string"
+      "type": "string",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "description": "Container image id",
+      "doc": "The id of the image to use then creating the container."
     },
     {
       "endpoint": "/container/networkIds",
-      "type": "stringarray"
+      "type": "stringarray",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "description": "Container network ids",
+      "doc": "The ids of the network to connect with the container."
     },
     {
       "endpoint": "/container/volumeIds",
-      "type": "stringarray"
+      "type": "stringarray",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "description": "Container volume ids",
+      "doc": "The ids of the volumes to mount on the container."
     },
     {
       "endpoint": "/container/restartPolicy",
-      "type": "string"
+      "type": "string",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "description": "Container restart policy",
+      "doc": "The behavior to apply when the container exits."
     },
     {
       "endpoint": "/container/env",
       "type": "stringarray",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "description": "Container environment",
       "doc": "Array of KEY=value environment variables"
     },
     {
       "endpoint": "/container/binds",
       "type": "stringarray",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "description": "Container binds",
       "doc": "Array of binds"
     },
     {
       "endpoint": "/container/networks",
-      "type": "stringarray"
+      "type": "stringarray",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "description": "Container networks"
     },
     {
       "endpoint": "/container/portBindings",
       "type": "stringarray",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "description": "Container port bindings",
       "doc": "Array of ip:[host_port:]container_port[/protocol] | [hostPort:]containerPort[/protocol]. protocol is tcp by default"
     },
     {
       "endpoint": "/container/privileged",
-      "type": "boolean"
+      "type": "boolean",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "description": "Run privileged",
+      "doc": "Runs the exec process with extended privileges."
     }
   ]
 }

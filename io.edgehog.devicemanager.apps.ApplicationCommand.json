@@ -4,11 +4,15 @@
   "version_minor": 1,
   "type": "datastream",
   "ownership": "server",
+  "aggregation": "individual",
   "mappings": [
     {
       "endpoint": "/%{release_id}/command",
       "type": "string",
-      "doc": "command enum [start, stop]"
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "description": "Application command",
+      "doc": "Command enum [start, stop]"
     }
   ]
 }

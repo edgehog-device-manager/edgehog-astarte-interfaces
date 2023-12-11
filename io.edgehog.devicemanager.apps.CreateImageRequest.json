@@ -8,19 +8,35 @@
   "mappings": [
     {
       "endpoint": "/image/id",
-      "type": "string"
+      "type": "string",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "description": "Create Image Request id",
+      "doc": "Unique id for the container image."
     },
     {
       "endpoint": "/image/repo",
-      "type": "string"
+      "type": "string",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "description": "Image repo",
+      "doc": "Repository of the container image."
     },
     {
       "endpoint": "/image/name",
-      "type": "string"
+      "type": "string",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "description": "Image name",
+      "doc": "Name of the container image."
     },
     {
       "endpoint": "/image/tag",
-      "type": "string"
+      "type": "string",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "description": "Image tag",
+      "doc": "Tag of the container image."
     }
   ]
 }

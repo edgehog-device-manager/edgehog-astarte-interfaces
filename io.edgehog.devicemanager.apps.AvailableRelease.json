@@ -7,15 +7,21 @@
   "mappings": [
     {
       "endpoint": "/%{release_id}/application_id",
-      "type": "string"
+      "type": "string",
+      "allow_unset": true,
+      "description": "Application id"
     },
     {
       "endpoint": "/%{release_id}/started",
-      "type": "boolean"
+      "type": "boolean",
+      "allow_unset": true,
+      "description": "Started application"
     },
     {
       "endpoint": "/%{release_id}/containers",
-      "type": "stringarray"
+      "type": "stringarray",
+      "allow_unset": true,
+      "description": "Application containers"
     }
   ]
 }

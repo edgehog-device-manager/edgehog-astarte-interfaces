@@ -8,15 +8,27 @@
   "mappings": [
     {
       "endpoint": "/release/id",
-      "type": "string"
+      "type": "string",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "description": "Create Release Request id",
+      "doc": "Unique id for the release."
     },
     {
       "endpoint": "/release/applicationId",
-      "type": "string"
+      "type": "string",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "description": "Application id",
+      "doc": "Application id of the given release."
     },
     {
       "endpoint": "/release/containers",
-      "type": "stringarray"
+      "type": "stringarray",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "description": "Release containers",
+      "doc": "Containers used by the release."
     }
   ]
 }

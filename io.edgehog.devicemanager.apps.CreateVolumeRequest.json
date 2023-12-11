@@ -8,16 +8,27 @@
   "mappings": [
     {
       "endpoint": "/volume/id",
-      "type": "string"
+      "type": "string",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "description": "Create Volume Request id",
+      "doc": "Unique id for the volume."
     },
     {
       "endpoint": "/volume/driver",
-      "type": "string"
+      "type": "string",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "description": "Volume driver name",
+      "doc": "Name of the volume driver to use."
     },
     {
       "endpoint": "/volume/options",
       "type": "stringarray",
-      "doc": "An array of key=value options to set for the drive"
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "description": "Volume driver options",
+      "doc": "An array of key=value options to set for the driver."
     }
   ]
 }

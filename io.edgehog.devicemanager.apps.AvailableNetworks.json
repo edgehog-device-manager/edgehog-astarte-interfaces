@@ -8,27 +8,32 @@
     {
       "allow_unset": true,
       "endpoint": "/%{network_id}/id",
-      "type": "string"
+      "type": "string",
+      "description": "Network id"
     },
     {
       "allow_unset": true,
       "endpoint": "/%{network_id}/driver",
-      "type": "string"
+      "type": "string",
+      "description": "Network driver"
     },
     {
       "allow_unset": true,
       "endpoint": "/%{network_id}/checkDuplicate",
-      "type": "boolean"
+      "type": "boolean",
+      "description": "Network check duplicates"
     },
     {
       "allow_unset": true,
       "endpoint": "/%{network_id}/internal",
-      "type": "boolean"
+      "type": "boolean",
+      "description": "Internal network"
     },
     {
       "allow_unset": true,
       "endpoint": "/%{network_id}/enableIpv6",
-      "type": "boolean"
+      "type": "boolean",
+      "description": "Enable IPV6"
     }
   ]
 }
