@@ -7,15 +7,9 @@
   "mappings": [
     {
       "endpoint": "/%{container_id}/id",
-      "type": "boolean",
-      "allow_unset": true,
-      "description": "Container id"
-    },
-    {
-      "endpoint": "/%{container_id}/hostname",
       "type": "string",
       "allow_unset": true,
-      "description": "Container hostname"
+      "description": "Container id"
     },
     {
       "endpoint": "/%{container_id}/imageId",
@@ -36,6 +30,18 @@
       "description": "Volume ids"
     },
     {
+      "endpoint": "/%{container_id}/hostname",
+      "type": "string",
+      "allow_unset": true,
+      "description": "Container hostname"
+    },
+    {
+      "endpoint": "/%{container_id}/image",
+      "type": "string",
+      "allow_unset": true,
+      "description": "Container image name"
+    },
+    {
       "endpoint": "/%{container_id}/restartPolicy",
       "type": "string",
       "allow_unset": true,
@@ -54,6 +60,13 @@
       "allow_unset": true,
       "description": "Container binds",
       "doc": "Array of binds"
+    },
+    {
+      "endpoint": "/%{container_id}/networks",
+      "type": "stringarray",
+      "allow_unset": true,
+      "description": "Container binds",
+      "doc": "Container networks"
     },
     {
       "endpoint": "/%{container_id}/portBindings",

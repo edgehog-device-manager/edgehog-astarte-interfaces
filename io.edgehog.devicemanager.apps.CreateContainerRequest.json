@@ -15,14 +15,6 @@
       "doc": "Unique id for the container."
     },
     {
-      "endpoint": "/container/hostname",
-      "type": "string",
-      "database_retention_policy": "use_ttl",
-      "database_retention_ttl": 31556952,
-      "description": "Container hostname",
-      "doc": "The hostname to use for the container, as a valid RFC 1123 hostname."
-    },
-    {
       "endpoint": "/container/imageId",
       "type": "string",
       "database_retention_policy": "use_ttl",
@@ -45,6 +37,22 @@
       "database_retention_ttl": 31556952,
       "description": "Container volume ids",
       "doc": "The ids of the volumes to mount on the container."
+    },
+    {
+      "endpoint": "/container/hostname",
+      "type": "string",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "description": "Container hostname",
+      "doc": "The hostname to use for the container, as a valid RFC 1123 hostname."
+    },
+    {
+      "endpoint": "/container/image",
+      "type": "string",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "description": "Container image",
+      "doc": "The name of the image to use when creating the container"
     },
     {
       "endpoint": "/container/restartPolicy",
