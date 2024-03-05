@@ -1,0 +1,85 @@
+{
+  "interface_name": "io.edgehog.devicemanager.apps.AvailableContainers",
+  "version_major": 0,
+  "version_minor": 1,
+  "type": "properties",
+  "ownership": "device",
+  "mappings": [
+    {
+      "endpoint": "/%{container_id}/id",
+      "type": "string",
+      "allow_unset": true,
+      "description": "Container id"
+    },
+    {
+      "endpoint": "/%{container_id}/imageId",
+      "type": "string",
+      "allow_unset": true,
+      "description": "Image id"
+    },
+    {
+      "endpoint": "/%{container_id}/networkIds",
+      "type": "stringarray",
+      "allow_unset": true,
+      "description": "Network ids"
+    },
+    {
+      "endpoint": "/%{container_id}/volumeIds",
+      "type": "stringarray",
+      "allow_unset": true,
+      "description": "Volume ids"
+    },
+    {
+      "endpoint": "/%{container_id}/hostname",
+      "type": "string",
+      "allow_unset": true,
+      "description": "Container hostname"
+    },
+    {
+      "endpoint": "/%{container_id}/image",
+      "type": "string",
+      "allow_unset": true,
+      "description": "Container image name"
+    },
+    {
+      "endpoint": "/%{container_id}/restartPolicy",
+      "type": "string",
+      "allow_unset": true,
+      "description": "Container restart policy"
+    },
+    {
+      "endpoint": "/%{container_id}/env",
+      "type": "stringarray",
+      "allow_unset": true,
+      "description": "Container environment",
+      "doc": "Array of KEY=value environment variables"
+    },
+    {
+      "endpoint": "/%{container_id}/binds",
+      "type": "stringarray",
+      "allow_unset": true,
+      "description": "Container binds",
+      "doc": "Array of binds"
+    },
+    {
+      "endpoint": "/%{container_id}/networks",
+      "type": "stringarray",
+      "allow_unset": true,
+      "description": "Container binds",
+      "doc": "Container networks"
+    },
+    {
+      "endpoint": "/%{container_id}/portBindings",
+      "type": "stringarray",
+      "allow_unset": true,
+      "description": "Container port bindings",
+      "doc": "Array of ip:[host_port:]container_port[/protocol] | [hostPort:]containerPort[/protocol]. protocol is tcp by default"
+    },
+    {
+      "endpoint": "/%{container_id}/privileged",
+      "type": "boolean",
+      "allow_unset": true,
+      "description": "Privileged container"
+    }
+  ]
+}
