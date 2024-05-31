@@ -1,0 +1,33 @@
+{
+  "interface_name": "io.edgehog.devicemanager.apps.AvailableImages",
+  "version_major": 0,
+  "version_minor": 1,
+  "type": "properties",
+  "ownership": "device",
+  "mappings": [
+    {
+      "allow_unset": true,
+      "endpoint": "/%{image_id}/repo",
+      "description": "Image repo",
+      "type": "string"
+    },
+    {
+      "allow_unset": true,
+      "endpoint": "/%{image_id}/name",
+      "description": "Image name",
+      "type": "string"
+    },
+    {
+      "allow_unset": true,
+      "endpoint": "/%{image_id}/tag",
+      "description": "Image tag",
+      "type": "string"
+    },
+    {
+      "allow_unset": true,
+      "endpoint": "/%{image_id}/pulled",
+      "description": "Pulled image",
+      "type": "boolean"
+    }
+  ]
+}

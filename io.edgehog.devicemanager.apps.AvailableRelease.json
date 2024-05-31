@@ -1,0 +1,27 @@
+{
+  "interface_name": "io.edgehog.devicemanager.apps.AvailableRelease",
+  "version_major": 0,
+  "version_minor": 1,
+  "type": "properties",
+  "ownership": "device",
+  "mappings": [
+    {
+      "endpoint": "/%{release_id}/application_id",
+      "type": "string",
+      "allow_unset": true,
+      "description": "Application id"
+    },
+    {
+      "endpoint": "/%{release_id}/started",
+      "type": "boolean",
+      "allow_unset": true,
+      "description": "Started application"
+    },
+    {
+      "endpoint": "/%{release_id}/containers",
+      "type": "stringarray",
+      "allow_unset": true,
+      "description": "Application containers"
+    }
+  ]
+}
