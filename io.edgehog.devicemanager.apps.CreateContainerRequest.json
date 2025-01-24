@@ -76,7 +76,7 @@
       "database_retention_ttl": 31556952,
       "reliability": "guaranteed",
       "description": "Container environment",
-      "doc": "Array of KEY=value environment variables"
+      "doc": "Array of key=value environment variables. The key cannot contain `=`."
     },
     {
       "endpoint": "/container/binds",
