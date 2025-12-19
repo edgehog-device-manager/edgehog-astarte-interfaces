@@ -4,6 +4,31 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.10.0] - 2025-12-09
+### Added
+- added `io.edgehog.devicemanager.apps.AvailableContainers` interface
+- added `io.edgehog.devicemanager.apps.AvailableDeployments` interface
+- added `io.edgehog.devicemanager.apps.AvailableDeviceMappings` interface
+- added `io.edgehog.devicemanager.apps.AvailableImages` interface
+- added `io.edgehog.devicemanager.apps.AvailableNetworks` interface
+- added `io.edgehog.devicemanager.apps.AvailableVolumes` interface
+- added `io.edgehog.devicemanager.apps.CreateContainerRequest` interface
+- added `io.edgehog.devicemanager.apps.CreateDeploymentRequest` interface
+- added `io.edgehog.devicemanager.apps.CreateDeviceMappingRequest` interface
+- added `io.edgehog.devicemanager.apps.CreateImageRequest` interface
+- added `io.edgehog.devicemanager.apps.CreateNetworkRequest` interface
+- added `io.edgehog.devicemanager.apps.CreateVolumeRequest` interface
+- added `io.edgehog.devicemanager.apps.DeploymentCommand` interface
+- added `io.edgehog.devicemanager.apps.DeploymentEvent` interface
+- added `io.edgehog.devicemanager.apps.DeploymentUpdate` interface
+- added `io.edgehog.devicemanager.apps.stats.ContainerBlkio` interface
+- added `io.edgehog.devicemanager.apps.stats.ContainerCpu` interface
+- added `io.edgehog.devicemanager.apps.stats.ContainerMemoryStats` interface
+- added `io.edgehog.devicemanager.apps.stats.ContainerMemory` interface
+- added `io.edgehog.devicemanager.apps.stats.ContainerNetworks` interface
+- added `io.edgehog.devicemanager.apps.stats.ContainerProcesses` interface
+- added `io.edgehog.devicemanager.apps.stats.VolumeUsage` interface
+
 ## [0.8.0] - 2024-04-19
 ### Added
 - Add `io.edgehog.devicemanager.ForwarderSessionRequest` and
