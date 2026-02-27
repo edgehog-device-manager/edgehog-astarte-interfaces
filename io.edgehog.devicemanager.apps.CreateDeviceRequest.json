@@ -1,0 +1,77 @@
+{
+  "interface_name": "io.edgehog.devicemanager.apps.CreateDeviceRequest",
+  "version_major": 0,
+  "version_minor": 1,
+  "type": "datastream",
+  "ownership": "server",
+  "aggregation": "object",
+  "mappings": [
+    {
+      "endpoint": "/deviceRequest/id",
+      "type": "string",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "Create Device Request id",
+      "doc": "Unique id for the container."
+    },
+    {
+      "endpoint": "/deviceRequest/deploymentId",
+      "type": "string",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "Reference to a Deployment using the device mapping",
+      "doc": "The deployment in which the device mapping is used, so the device can send deployment events to Astarte for the create request"
+    },
+    {
+      "endpoint": "/deviceRequest/driver",
+      "type": "string",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "The name of the device driver to use for this request.",
+      "doc": "Note that if this is specified the capabilities are ignored when selecting a device driver. Default value is an empty string"
+    },
+    {
+      "endpoint": "/deviceRequest/count",
+      "type": "longinteger",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "doc": "Default value is -1"
+    },
+    {
+      "endpoint": "/deviceRequest/deviceIds",
+      "type": "stringarray",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed"
+    },
+    {
+      "endpoint": "/deviceRequest/capabilities",
+      "type": "stringarray",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "A list of capabilities; an OR list of AND lists of capabilities.",
+      "doc": "Note that if a driver is specified the capabilities have no effect on selecting a driver as the driver name is used directly. Note that if no driver is specified the capabilities are used to select a driver with the required capabilities. JSON encoded array, so an array of arrays"
+    },
+    {
+      "endpoint": "/deviceRequest/optionKeys",
+      "type": "stringarray",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "doc": "Driver-specific options, specified as a key/value pairs. These options are passed directly to the driver"
+    },
+    {
+      "endpoint": "/deviceRequest/optionValues",
+      "type": "stringarray",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "doc": "Driver-specific options, specified as a key/value pairs. These options are passed directly to the driver"
+    }
+  ]
+}

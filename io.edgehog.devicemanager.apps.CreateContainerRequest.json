@@ -1,7 +1,7 @@
 {
   "interface_name": "io.edgehog.devicemanager.apps.CreateContainerRequest",
   "version_major": 0,
-  "version_minor": 1,
+  "version_minor": 2,
   "type": "datastream",
   "ownership": "server",
   "aggregation": "object",
@@ -59,6 +59,15 @@
       "reliability": "guaranteed",
       "description": "Container device mappings ids",
       "doc": "The ids of the device mappings to mount on the container."
+    },
+    {
+      "endpoint": "/container/deviceRequestIds",
+      "type": "stringarray",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "Container device request ids",
+      "doc": "The ids of the devices to request for the container."
     },
     {
       "endpoint": "/container/hostname",
