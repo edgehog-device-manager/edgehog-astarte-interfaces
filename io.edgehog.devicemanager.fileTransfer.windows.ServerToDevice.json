@@ -77,15 +77,6 @@
       "doc": "Must be in the form sha256:deadbeaf, and should be used only if supported by the device."
     },
     {
-      "endpoint": "/request/fileName",
-      "type": "string",
-      "reliability": "guaranteed",
-      "database_retention_policy": "use_ttl",
-      "database_retention_ttl": 3600,
-      "description": "Name of the file to download",
-      "doc": "Optional file name of the file to download, default is empty"
-    },
-    {
       "endpoint": "/request/ttlSeconds",
       "type": "longinteger",
       "reliability": "guaranteed",
