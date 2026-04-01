@@ -26,16 +26,16 @@
       "description": "The URL to get the file from"
     },
     {
-      "endpoint": "/request/httpHeaderKey",
-      "type": "string",
+      "endpoint": "/request/httpHeaderKeys",
+      "type": "stringarray",
       "reliability": "guaranteed",
       "database_retention_policy": "use_ttl",
       "database_retention_ttl": 3600,
       "description": "Keys for the HTTP headers, must be in the order of the values"
     },
     {
-      "endpoint": "/request/httpHeaderValue",
-      "type": "string",
+      "endpoint": "/request/httpHeaderValues",
+      "type": "stringarray",
       "reliability": "guaranteed",
       "database_retention_policy": "use_ttl",
       "database_retention_ttl": 3600,
