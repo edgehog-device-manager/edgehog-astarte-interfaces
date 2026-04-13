@@ -18,7 +18,7 @@
       "endpoint": "/unixPermissions",
       "type": "boolean",
       "description": "Support unix file mode, user id and group id.",
-      "doc": "Flag to support setting the file mode, user and group ownership of a transfered file in a unix system."
+      "doc": "Flag to support setting the file mode, user and group ownership of a transferred file in a unix system."
     },
     {
       "endpoint": "/targets",
