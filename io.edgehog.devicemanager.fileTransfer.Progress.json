@@ -37,6 +37,6 @@
       "database_retention_ttl": 3600,
       "description": "Total size of the transfer.",
       "doc": "Reports the total number of bytes that have to be transferred. If the total size is not known this field contains a value of '-1'."
-    },
+    }
   ]
 }
