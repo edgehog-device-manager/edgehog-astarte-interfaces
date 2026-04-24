@@ -12,7 +12,6 @@
       "explicit_timestamp": true,
       "description": "Battery level estimated percentage [0.0%-100.0%]",
       "database_retention_policy": "use_ttl",
-      "database_retention_ttl": 5184000
     },
     {
       "endpoint": "/%{battery_slot}/levelAbsoluteError",
@@ -20,7 +19,6 @@
       "explicit_timestamp": true,
       "description": "Battery level measurement absolute error [0.0-100.0]",
       "database_retention_policy": "use_ttl",
-      "database_retention_ttl": 5184000
     },
     {
       "endpoint": "/%{battery_slot}/status",
@@ -28,7 +26,6 @@
       "explicit_timestamp": true,
       "description": "Battery status string, any of: Charging, Discharging, Idle, EitherIdleOrCharging, Failure, Removed, Unknown",
       "database_retention_policy": "use_ttl",
-      "database_retention_ttl": 5184000
     }
   ]
 }

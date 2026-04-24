@@ -12,7 +12,6 @@
       "explicit_timestamp": true,
       "description": "Available memory (Bytes)",
       "database_retention_policy": "use_ttl",
-      "database_retention_ttl": 5184000
     },
     {
       "endpoint": "/systemStatus/bootId",
@@ -20,7 +19,6 @@
       "explicit_timestamp": true,
       "description": "UUID representing the Boot Id",
       "database_retention_policy": "use_ttl",
-      "database_retention_ttl": 5184000
     },
     {
       "endpoint": "/systemStatus/taskCount",
@@ -28,7 +26,6 @@
       "explicit_timestamp": true,
       "description": "Number of running tasks or processes",
       "database_retention_policy": "use_ttl",
-      "database_retention_ttl": 5184000
     },
     {
       "endpoint": "/systemStatus/uptimeMillis",
@@ -36,7 +33,6 @@
       "explicit_timestamp": true,
       "description": "Get time in milliseconds since boot",
       "database_retention_policy": "use_ttl",
-      "database_retention_ttl": 5184000
     }
   ]
 }
