@@ -10,7 +10,6 @@
       "endpoint": "/ap/channel",
       "type": "integer",
       "database_retention_policy": "use_ttl",
-      "database_retention_ttl": 5184000,
       "explicit_timestamp": true,
       "description": "The channel over which the client is communicating with the access point.",
       "doc": "The channel represents one of the ranges into which the reference frequency is divided and it's identified by an integer number in the range 1 - 165, depending on the frequency itself and the region."
@@ -19,7 +18,6 @@
       "endpoint": "/ap/connected",
       "type": "boolean",
       "database_retention_policy": "use_ttl",
-      "database_retention_ttl": 5184000,
       "explicit_timestamp": true,
       "description": "Identifies if the device is connected to this Access Point"
     },
@@ -27,7 +25,6 @@
       "endpoint": "/ap/essid",
       "type": "string",
       "database_retention_policy": "use_ttl",
-      "database_retention_ttl": 5184000,
       "explicit_timestamp": true,
       "description": "Extended Service Set Identification of the current AP, empty string if the AP is hidden."
     },
@@ -35,7 +32,6 @@
       "endpoint": "/ap/macAddress",
       "type": "string",
       "database_retention_policy": "use_ttl",
-      "database_retention_ttl": 5184000,
       "explicit_timestamp": true,
       "description": "Lower case mac address string formatted like `de:ad:be:ff:11:22`."
     },
@@ -43,7 +39,6 @@
       "endpoint": "/ap/rssi",
       "type": "integer",
       "database_retention_policy": "use_ttl",
-      "database_retention_ttl": 5184000,
       "explicit_timestamp": true,
       "description": "The current signal strength measured in dBm."
     }
