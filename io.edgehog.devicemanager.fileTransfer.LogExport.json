@@ -1,0 +1,52 @@
+{
+  "interface_name": "io.edgehog.devicemanager.fileTransfer.LogExport",
+  "version_major": 0,
+  "version_minor": 1,
+  "type": "datastream",
+  "ownership": "server",
+  "aggregation": "object",
+  "description": "Exports the logs from the device",
+  "doc": "Request a log export to upload them to a server. This request will be combined with a file transfer for the upload. The default it no value is provided is to upload the logs from since the current boot.",
+  "mappings": [
+    {
+      "endpoint": "/request/id",
+      "type": "string",
+      "reliability": "guaranteed",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 3600,
+      "description": "Export ID for the file"
+    },
+    {
+      "endpoint": "/request/fileTransferId",
+      "type": "string",
+      "reliability": "guaranteed",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 3600,
+      "description": "File transfer ID to upload the files to"
+    },
+    {
+      "endpoint": "/request/since",
+      "type": "datetime",
+      "reliability": "guaranteed",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 3600,
+      "description": "Starting time for the log. Optional value"
+    },
+    {
+      "endpoint": "/request/service",
+      "type": "string",
+      "reliability": "guaranteed",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 3600,
+      "description": "Service to export the logs from. Optional value"
+    },
+    {
+      "endpoint": "/request/bootNumber",
+      "type": "integer",
+      "reliability": "guaranteed",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 3600,
+      "description": "Boot number to export the log from. Optional value, with rance `..0`. For example `0` is current boot and `-1` is previous boot"
+    }
+  ]
+}
