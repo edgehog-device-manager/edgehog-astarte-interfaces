@@ -2,7 +2,7 @@
 
 Edgehog Astarte Interfaces contains the set of
 [interfaces](https://docs.astarte-platform.org/latest/030-interface.html) that define a common
-communication schema between Astarte remote istance and Edgehog devices.
+communication schema between Astarte remote instance and Edgehog devices.
 
 ## Contributing
 
