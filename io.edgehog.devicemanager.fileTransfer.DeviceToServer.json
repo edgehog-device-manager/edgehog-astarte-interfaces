@@ -13,7 +13,6 @@
       "type": "string",
       "reliability": "guaranteed",
       "database_retention_policy": "use_ttl",
-      "database_retention_ttl": 3600,
       "description": "Transfer ID for the file"
     },
     {
@@ -21,7 +20,6 @@
       "type": "string",
       "reliability": "guaranteed",
       "database_retention_policy": "use_ttl",
-      "database_retention_ttl": 3600,
       "description": "The URL to upload the file to"
     },
     {
@@ -29,7 +27,6 @@
       "type": "stringarray",
       "reliability": "guaranteed",
       "database_retention_policy": "use_ttl",
-      "database_retention_ttl": 3600,
       "description": "Keys for the HTTP headers, must be in the order of the values"
     },
     {
@@ -37,7 +34,6 @@
       "type": "stringarray",
       "reliability": "guaranteed",
       "database_retention_policy": "use_ttl",
-      "database_retention_ttl": 3600,
       "description": "Values for the HTTP headers, must be in the order of the keys"
     },
     {
@@ -45,7 +41,6 @@
       "type": "string",
       "reliability": "guaranteed",
       "database_retention_policy": "use_ttl",
-      "database_retention_ttl": 3600,
       "description": "Encoding of the file or directory to upload",
       "doc": "Optional enum string for the file encoding with default value empty, other values are: [gz, lz4, tar, tar.gz, tar.lz4]"
     },
@@ -54,7 +49,6 @@
       "type": "boolean",
       "reliability": "guaranteed",
       "database_retention_policy": "use_ttl",
-      "database_retention_ttl": 3600,
       "description": "Flag to enable the progress reporting of the download."
     },
     {
@@ -62,7 +56,6 @@
       "type": "string",
       "reliability": "guaranteed",
       "database_retention_policy": "use_ttl",
-      "database_retention_ttl": 3600,
       "description": "Source from which the file should be read from.",
       "doc": "String enum specifying the source type, with allowed values: [storage, streaming, filesystem]."
     },
@@ -71,7 +64,6 @@
       "type": "string",
       "reliability": "guaranteed",
       "database_retention_policy": "use_ttl",
-      "database_retention_ttl": 3600,
       "description": "Source-specific information on what to upload to the server for the source.",
       "doc": "The value depends on the selected source type: for 'storage' is the ID of an 'io.edgehog.devicemanager.storage.File' property, for 'streaming' it's an empty string, and for 'filesystem' is a path of a file on the device."
     }

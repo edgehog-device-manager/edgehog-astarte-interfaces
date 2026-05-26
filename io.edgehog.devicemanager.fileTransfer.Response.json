@@ -13,7 +13,6 @@
       "type": "string",
       "reliability": "guaranteed",
       "database_retention_policy": "use_ttl",
-      "database_retention_ttl": 3600,
       "description": "Transfer ID for the file",
       "doc": "Can be either for download or upload transfers."
     },
@@ -22,7 +21,6 @@
       "type": "string",
       "reliability": "guaranteed",
       "database_retention_policy": "use_ttl",
-      "database_retention_ttl": 3600,
       "description": "Direction of the file transfer",
       "doc": "Specifies the direction of the transfer. Allowed values: 'server_to_device' or 'device_to_server'."
     },
@@ -31,7 +29,6 @@
       "type": "longinteger",
       "reliability": "guaranteed",
       "database_retention_policy": "use_ttl",
-      "database_retention_ttl": 3600,
       "description": "Success or error code for the transfer",
       "doc": "A 0 code is a success, errors are POSIX errno."
     },
@@ -40,7 +37,6 @@
       "type": "string",
       "reliability": "guaranteed",
       "database_retention_policy": "use_ttl",
-      "database_retention_ttl": 3600,
       "description": "Optional message for the response"
     }
   ]
