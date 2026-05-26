@@ -8,13 +8,15 @@
   "doc": "Published when a file has been fully transferred and stored on the device.",
   "mappings": [
     {
-      "endpoint": "/%{requestId}/pathOnDevice",
+      "endpoint": "/%{fileId}/pathOnDevice",
       "type": "string",
+      "allow_unset": true,
       "description": "Path on the device for the transferred file"
     },
     {
-      "endpoint": "/%{requestId}/sizeBytes",
+      "endpoint": "/%{fileId}/sizeBytes",
       "type": "longinteger",
+      "allow_unset": true,
       "description": "Size in bytes of the file"
     }
   ]
