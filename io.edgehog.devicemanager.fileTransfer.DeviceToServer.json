@@ -14,7 +14,7 @@
       "reliability": "guaranteed",
       "database_retention_policy": "use_ttl",
       "database_retention_ttl": 3600,
-      "description": "Transfer ID for the file"
+      "description": "Transfer ID (UUID v4) for the file"
     },
     {
       "endpoint": "/request/url",
