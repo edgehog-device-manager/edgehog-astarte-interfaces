@@ -14,7 +14,7 @@
       "reliability": "guaranteed",
       "database_retention_policy": "use_ttl",
       "database_retention_ttl": 3600,
-      "description": "Transfer ID (UUID v4) for the file",
+      "description": "Transfer ID (UUID) for the file",
       "doc": "If the file is to be stored, this MUST be unique to the file (e.g. hash of the content). For a file that needs to be streamed, it can be unique for the single request (e.g. uuid)."
     },
     {
