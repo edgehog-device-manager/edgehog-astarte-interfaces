@@ -1,13 +1,14 @@
 {
   "interface_name": "io.edgehog.devicemanager.apps.CreateContainerRequest",
-  "version_major": 0,
-  "version_minor": 2,
+  "version_major": 1,
+  "version_minor": 0,
   "type": "datastream",
   "ownership": "server",
   "aggregation": "object",
   "mappings": [
     {
       "endpoint": "/container/id",
+      "required": true,
       "type": "string",
       "database_retention_policy": "use_ttl",
       "database_retention_ttl": 31556952,
@@ -17,6 +18,7 @@
     },
     {
       "endpoint": "/container/deploymentId",
+      "required": true,
       "type": "string",
       "database_retention_policy": "use_ttl",
       "database_retention_ttl": 31556952,
@@ -26,6 +28,7 @@
     },
     {
       "endpoint": "/container/imageId",
+      "required": true,
       "type": "string",
       "database_retention_policy": "use_ttl",
       "database_retention_ttl": 31556952,
@@ -79,6 +82,146 @@
       "doc": "The hostname to use for the container, as a valid RFC 1123 hostname."
     },
     {
+      "endpoint": "/container/domainname",
+      "type": "string",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "Container hostname",
+      "doc": "The domain name to use for the container."
+    },
+    {
+      "endpoint": "/container/user",
+      "type": "string",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "Run as this user inside the container",
+      "doc": "Can be either user-name or UID, and optional group-name or GID, separated by colon (`<user-name|UID>[<:group-name|GID>]`)."
+    },
+    {
+      "endpoint": "/container/cmd",
+      "type": "stringarray",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "Command to run specified as array of strings",
+      "doc": "This will be passed to the entrypoint"
+    },
+    {
+      "endpoint": "/container/healthcheckTest",
+      "type": "stringarray",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "A test to perform to check that the container is healthy. ",
+      "doc": "A non-zero exit code indicates a failed healthcheck"
+    },
+    {
+      "endpoint": "/container/healthcheckInterval",
+      "type": "longinteger",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "The time to wait before considering the check to have hung.",
+      "doc": "It should be 0 or at least 1000000 (1 ms). 0 means inherit."
+    },
+    {
+      "endpoint": "/container/healthcheckTimeout",
+      "type": "longinteger",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "The time to wait between checks in nanoseconds.",
+      "doc": "It should be 0 or at least 1000000 (1 ms). 0 means inherit."
+    },
+    {
+      "endpoint": "/container/healthcheckRetries",
+      "type": "integer",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "The number of consecutive failures needed to consider a container as unhealthy.",
+      "doc": "0 means inherit."
+    },
+    {
+      "endpoint": "/container/healthcheckStartPeriod",
+      "type": "longinteger",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "Start period for the container to initialize before starting health-retries countdown in nanoseconds.",
+      "doc": "It should be 0 or at least 1000000 (1 ms). 0 means inherit."
+    },
+    {
+      "endpoint": "/container/healthcheckStartInterval",
+      "type": "longinteger",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "The time to wait between checks in nanoseconds during the start period.",
+      "doc": "It should be 0 or at least 1000000 (1 ms). 0 means inherit."
+    },
+    {
+      "endpoint": "/container/workingDir",
+      "type": "string",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "The working directory for commands to run in."
+    },
+    {
+      "endpoint": "/container/entrypoint",
+      "type": "stringarray",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "The entry point for the container."
+    },
+    {
+      "endpoint": "/container/networkDisabled",
+      "type": "boolean",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "Disable networking for the container."
+    },
+    {
+      "endpoint": "/container/labelsKeys",
+      "type": "stringarray",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "User-defined key/value metadata.",
+      "doc": "This is a list of the keys for the values in labelsValues."
+    },
+    {
+      "endpoint": "/container/labelsValues",
+      "type": "stringarray",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "User-defined key/value metadata.",
+      "doc": "This is a list of the values for the keys in labelsKeys."
+    },
+    {
+      "endpoint": "/container/stopSignal",
+      "type": "string",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "Signal to stop a container"
+    },
+    {
+      "endpoint": "/container/stopTimeout",
+      "type": "integer",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "Timeout to stop a container in seconds.",
+      "doc": "Default to 10 seconds."
+    },
+    {
       "endpoint": "/container/restartPolicy",
       "type": "string",
       "database_retention_policy": "use_ttl",
@@ -86,6 +229,14 @@
       "reliability": "guaranteed",
       "description": "Container restart policy",
       "doc": "The behavior to apply when the container exits. Possible values are: ['', 'no', 'always' 'unless-stopped', 'on-failure']"
+    },
+    {
+      "endpoint": "/container/restartPolicyMaximumRetryCount",
+      "type": "integer",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "If on-failure is used, the number of times to retry before giving up."
     },
     {
       "endpoint": "/container/env",
@@ -124,6 +275,15 @@
       "doc": "Array of ip:[host_port:]container_port[/protocol] | [hostPort:]containerPort[/protocol]. Protocol is TCP by default"
     },
     {
+      "endpoint": "/container/exposedPorts",
+      "type": "stringarray",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "Container exposed ports",
+      "doc": "Array of ~<port>/<tcp|udp|sctp>`"
+    },
+    {
       "endpoint": "/container/extraHosts",
       "type": "stringarray",
       "database_retention_policy": "use_ttl",
@@ -151,13 +311,28 @@
       "doc": "A list of kernel capabilities to drop from the container."
     },
     {
+      "endpoint": "/container/cpuShares",
+      "type": "integer",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "An integer value representing this container's relative CPU weight versus other containers."
+    },
+    {
+      "endpoint": "/container/cpusetCpus",
+      "type": "string",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "CPUs in which to allow execution (e.g., 0-3, 0,1)."
+    },
+    {
       "endpoint": "/container/cpuPeriod",
       "type": "longinteger",
       "database_retention_policy": "use_ttl",
       "database_retention_ttl": 31556952,
       "reliability": "guaranteed",
-      "description": "The length of a CPU period in microseconds.",
-      "doc": "Unset if the value is -1 (or negative) and the cpuQuota must also be unset."
+      "description": "The length of a CPU period in microseconds."
     },
     {
       "endpoint": "/container/cpuQuota",
@@ -165,8 +340,7 @@
       "database_retention_policy": "use_ttl",
       "database_retention_ttl": 31556952,
       "reliability": "guaranteed",
-      "description": "Microseconds of CPU time that the container can get in a CPU period.",
-      "doc": "Unset if the value is -1 (or negative) and the cpuPeriod must also be unset."
+      "description": "Microseconds of CPU time that the container can get in a CPU period."
     },
     {
       "endpoint": "/container/cpuRealtimePeriod",
@@ -175,7 +349,7 @@
       "database_retention_ttl": 31556952,
       "reliability": "guaranteed",
       "description": "The length of a CPU real-time period in microseconds.",
-      "doc": "The length of a CPU real-time period in microseconds. Set to 0 to allocate no time allocated to real-time tasks. Unset if the value is -1 (or negative)."
+      "doc": "The length of a CPU real-time period in microseconds. Set to 0 to allocate no time allocated to real-time tasks."
     },
     {
       "endpoint": "/container/cpuRealtimeRuntime",
@@ -184,7 +358,7 @@
       "database_retention_ttl": 31556952,
       "reliability": "guaranteed",
       "description": "The length of a CPU real-time runtime in microseconds.",
-      "doc": "The length of a CPU real-time runtime in microseconds. Set to 0 to allocate no time allocated to real-time tasks. Unset if the value is -1 (or negative)."
+      "doc": "The length of a CPU real-time runtime in microseconds. Set to 0 to allocate no time allocated to real-time tasks."
     },
     {
       "endpoint": "/container/memory",
@@ -193,7 +367,7 @@
       "database_retention_ttl": 31556952,
       "reliability": "guaranteed",
       "description": "Memory limit in bytes.",
-      "doc": "Memory limit in bytes. Default to 0 for unlimited. Unset if the value is -1 (or negative)."
+      "doc": "Memory limit in bytes. Default to 0 for unlimited."
     },
     {
       "endpoint": "/container/memoryReservation",
@@ -201,7 +375,7 @@
       "database_retention_policy": "use_ttl",
       "database_retention_ttl": 31556952,
       "reliability": "guaranteed",
-      "description": "Memory soft limit in bytes. Default to 0 for unlimited. Unset if the value is -1 (or negative)."
+      "description": "Memory soft limit in bytes. Default to 0 for unlimited."
     },
     {
       "endpoint": "/container/memorySwap",
@@ -210,7 +384,7 @@
       "database_retention_ttl": 31556952,
       "reliability": "guaranteed",
       "description": "Total memory limit (memory + swap).",
-      "doc": "Total memory limit (memory + swap). Set as -1 to enable unlimited swap. Unset if the value is -2 (or more negative)."
+      "doc": "Total memory limit (memory + swap). Set as -1 to enable unlimited swap."
     },
     {
       "endpoint": "/container/memorySwappiness",
@@ -219,7 +393,51 @@
       "database_retention_ttl": 31556952,
       "reliability": "guaranteed",
       "description": "Memory swappiness",
-      "doc": "Tune a container's memory swappiness behavior. Accepts an integer between 0 and 100. Unset if the value is -1 (or negative)."
+      "doc": "Tune a container's memory swappiness behavior. Accepts an integer between 0 and 100."
+    },
+    {
+      "endpoint": "/container/deviceCgroupRules",
+      "type": "stringarray",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "A list of cgroup rules to apply to the container"
+    },
+    {
+      "endpoint": "/container/ulimitsName",
+      "type": "stringarray",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "A list of resource limits to set in the container.",
+      "doc": "List of names for the Ulimits objects mapped to the name, soft and hard fields."
+    },
+    {
+      "endpoint": "/container/ulimitsSoft",
+      "type": "integerarray",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "A list of resource limits to set in the container.",
+      "doc": "List of soft limits for the Ulimits objects mapped to the name, soft and hard fields."
+    },
+    {
+      "endpoint": "/container/ulimitsHard",
+      "type": "integerarray",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "A list of resource limits to set in the container.",
+      "doc": "List of hard limits for the Ulimits objects mapped to the name, soft and hard fields."
+    },
+    {
+      "endpoint": "/container/autoRemove",
+      "type": "boolean",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "Automatically remove the container when the container's process exits.",
+      "doc": "This has no effect if RestartPolicy is set."
     },
     {
       "endpoint": "/container/volumeDriver",
@@ -230,13 +448,22 @@
       "description": "Driver that this container uses to mount volumes."
     },
     {
-      "endpoint": "/container/storageOpt",
+      "endpoint": "/container/storageOptKeys",
       "type": "stringarray",
       "database_retention_policy": "use_ttl",
       "database_retention_ttl": 31556952,
       "reliability": "guaranteed",
       "description": "Storage driver options for this container.",
-      "doc": "Storage driver options for this container, in the form \"size=120G\"."
+      "doc": "Key for the values in storageOptValues"
+    },
+    {
+      "endpoint": "/container/storageOptValues",
+      "type": "stringarray",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "Storage driver options for this container.",
+      "doc": "Values for storageOptKey"
     },
     {
       "endpoint": "/container/readOnlyRootfs",
@@ -247,13 +474,120 @@
       "description": "Mount the container's root filesystem as read only."
     },
     {
-      "endpoint": "/container/tmpfs",
+      "endpoint": "/container/tmpfsPaths",
       "type": "stringarray",
       "database_retention_policy": "use_ttl",
       "database_retention_ttl": 31556952,
       "reliability": "guaranteed",
       "description": "A map of container directories which should be replaced by tmpfs mounts.",
-      "doc": "A map of container directories which should be replaced by tmpfs mounts, and their corresponding mount options. For example:\n \"/run=rw,noexec,nosuid,size=65536k\""
+      "doc": "The key of a map of container directories and options which should be replaced by tmpfs mounts, and their corresponding mount options. For example: '/run'"
+    },
+    {
+      "endpoint": "/container/tmpfsOptions",
+      "type": "stringarray",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "A map of container directories which should be replaced by tmpfs mounts.",
+      "doc": "The value of a map of container directories and options which should be replaced by tmpfs mounts, and their corresponding mount options. For example: 'rw,noexec,nosuid,size=65536k'"
+    },
+    {
+      "endpoint": "/container/cgroupnsMode",
+      "type": "string",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "cgroup namespace mode for the container.",
+      "doc": " Possible values are: `private` the container runs in its own private cgroup namespace, `host` use the host system's cgroup namespace"
+    },
+    {
+      "endpoint": "/container/dns",
+      "type": "stringarray",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "A list of DNS servers for the container to use."
+    },
+    {
+      "endpoint": "/container/dnsOptions",
+      "type": "stringarray",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "A list of DNS options."
+    },
+    {
+      "endpoint": "/container/dnsSearch",
+      "type": "stringarray",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "A list of DNS search domains."
+    },
+    {
+      "endpoint": "/container/groupAdd",
+      "type": "stringarray",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "A list of additional groups that the container process will run as."
+    },
+    {
+      "endpoint": "/container/ipcMode",
+      "type": "string",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "IPC sharing mode for the container."
+    },
+    {
+      "endpoint": "/container/oomScoreAdj",
+      "type": "integer",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "An integer value containing the score given to the container in order to tune OOM killer preferences."
+    },
+    {
+      "endpoint": "/container/usernsMode",
+      "type": "string",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "Sets the usernamespace mode for the container when usernamespace remapping option is enabled."
+    },
+    {
+      "endpoint": "/container/sysctlsKeys",
+      "type": "stringarray",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "A list of kernel parameters (sysctls) to set in the container."
+    },
+    {
+      "endpoint": "/container/sysctlsValues",
+      "type": "stringarray",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "A list of kernel parameters (sysctls) to set in the container."
+    },
+    {
+      "endpoint": "/container/shmSize",
+      "type": "longinteger",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "Size of /dev/shm in bytes.",
+      "doc": "Must be >= 0. If omitted, the system uses 64MB."
+    },
+    {
+      "endpoint": "/container/runtime",
+      "type": "string",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "Runtime to use with this container."
     },
     {
       "endpoint": "/container/privileged",
@@ -263,6 +597,163 @@
       "reliability": "guaranteed",
       "description": "Run privileged",
       "doc": "Runs the exec process with extended privileges."
+    },
+    {
+      "endpoint": "/container/logType",
+      "type": "string",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "The logging configuration for this container",
+      "doc": "Name of the logging driver used for the container or 'none' if logging is disabled."
+    },
+    {
+      "endpoint": "/container/logConfigKeys",
+      "type": "stringarray",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "Driver-specific configuration options for the logging driver."
+    },
+    {
+      "endpoint": "/container/logConfigValues",
+      "type": "stringarray",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "Driver-specific configuration options for the logging driver."
+    },
+    {
+      "endpoint": "/container/blkioWeight",
+      "type": "integer",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "Block IO weight (relative weight).",
+      "doc": "Value from [0..1000]"
+    },
+    {
+      "endpoint": "/container/blkioWeightDevicePath",
+      "type": "stringarray",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "Block IO weight (relative device weight).",
+      "doc": "This value is related to the blkioWeightDeviceWeight value"
+    },
+    {
+      "endpoint": "/container/blkioWeightDeviceWeight",
+      "type": "integerarray",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "Block IO weight (relative device weight).",
+      "doc": "This value is related to the blkioWeightDevicePath"
+    },
+    {
+      "endpoint": "/container/blkioDeviceReadBpsPath",
+      "type": "stringarray",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "Limit read rate (bytes per second) to a device.",
+      "doc": "This value is related to the blkioDeviceReadBpsRate value"
+    },
+    {
+      "endpoint": "/container/blkioDeviceReadBpsRate",
+      "type": "longintegerarray",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "Limit read rate (bytes per second) to a device.",
+      "doc": "This value is related to the blkioDeviceReadBpsPath"
+    },
+    {
+      "endpoint": "/container/blkioDeviceWriteBpsPath",
+      "type": "stringarray",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "Limit write rate (bytes per second) to a device.",
+      "doc": "This value is related to the blkioDeviceWriteBpsRate value"
+    },
+    {
+      "endpoint": "/container/blkioDeviceWriteBpsRate",
+      "type": "longintegerarray",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "Limit write rate (bytes per second) to a device.",
+      "doc": "This value is related to the blkioDeviceWriteBpsPath"
+    },
+    {
+      "endpoint": "/container/blkioDeviceReadIopsPath",
+      "type": "stringarray",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "Limit read rate (IO per second) to a device.",
+      "doc": "This value is related to the blkioDeviceReadIopsRate value"
+    },
+    {
+      "endpoint": "/container/blkioDeviceReadIopsRate",
+      "type": "longintegerarray",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "Limit read rate (IO per second) to a device.",
+      "doc": "This value is related to the blkioDeviceReadIopsPath"
+    },
+    {
+      "endpoint": "/container/blkioDeviceWriteIopsPath",
+      "type": "stringarray",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "Limit write rate (bytes per second) to a device.",
+      "doc": "This value is related to the blkioDeviceWriteIopsRate value"
+    },
+    {
+      "endpoint": "/container/blkioDeviceWriteIopsRate",
+      "type": "longintegerarray",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "Limit write rate (bytes per second) to a device.",
+      "doc": "This value is related to the blkioDeviceWriteIopsPath"
+    },
+    {
+      "endpoint": "/container/securityopt",
+      "type": "stringarray",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "a list of string values to customize labels for mls systems, such as selinux."
+    },
+    {
+      "endpoint": "/container/pidMode",
+      "type": "string",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "Set the PID (Process) Namespace mode for the container.",
+      "doc": "It can be either: `container:<name|id>` joins another container's PID namespace, `host` use the host's PID namespace inside the container"
+    },
+    {
+      "endpoint": "/container/maskedPaths",
+      "type": "stringarray",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "The list of paths to be masked inside the container (this overrides the default set of paths)."
+    },
+    {
+      "endpoint": "/container/readonlyPaths",
+      "type": "stringarray",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "The list of paths to be set as read-only inside the container (this overrides the default set of paths)."
     }
   ]
 }
