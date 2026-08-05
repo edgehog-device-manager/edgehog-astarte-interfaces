@@ -1,0 +1,17 @@
+{
+  "interface_name": "io.edgehog.devicemanager.apps.AvailableFileBinds",
+  "version_major": 0,
+  "version_minor": 1,
+  "type": "properties",
+  "ownership": "device",
+  "description": "The available file bind.",
+  "doc": "Exposes the file binds available on the device",
+  "mappings": [
+    {
+      "allow_unset": true,
+      "endpoint": "/%{file_bind_id}/present",
+      "type": "boolean",
+      "description": "The file bind was received"
+    }
+  ]
+}
