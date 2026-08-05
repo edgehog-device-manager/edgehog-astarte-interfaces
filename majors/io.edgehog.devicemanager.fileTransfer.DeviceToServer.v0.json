@@ -1,7 +1,7 @@
 {
   "interface_name": "io.edgehog.devicemanager.fileTransfer.DeviceToServer",
   "version_major": 0,
-  "version_minor": 1,
+  "version_minor": 2,
   "type": "datastream",
   "ownership": "server",
   "aggregation": "object",
@@ -74,6 +74,24 @@
       "database_retention_ttl": 3600,
       "description": "Source-specific information on what to upload to the server for the source.",
       "doc": "The value depends on the selected source type: for 'storage' is the ID of an 'io.edgehog.devicemanager.storage.File' property, for 'streaming' it's an empty string, and for 'filesystem' is a path of a file on the device."
+    },
+    {
+      "endpoint": "/request/preHook",
+      "type": "stringarray",
+      "reliability": "guaranteed",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 3600,
+      "description": "Pre request hook",
+      "doc": "Commands to execute before the file is requested. The command must succeed (e.g. exit code 0 on unix platforms) or the file transfer request will error. The following environment variables will be exported: $FT_REQUEST_ID as the file transfer request id, $FT_REQUEST_TARGET_TYPE as a value for the source type, $FT_REQUEST_TARGET as optional a value of the source, and $FT_REQUEST_PATH for the absolute path of the file"
+    },
+    {
+      "endpoint": "/request/postHook",
+      "type": "stringarray",
+      "reliability": "guaranteed",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 3600,
+      "description": "Post request hook",
+      "doc": "Commands to execute asfter the file is requested. The command must succeed (e.g. exit code 0 on unix platforms) or the file transfer request will error. The following environment variables will be exported: $FT_REQUEST_ID as the file transfer request id, $FT_REQUEST_TARGET_TYPE as a value for the source type, $FT_REQUEST_TARGET as optional a value of the source, and $FT_REQUEST_PATH for the absolute path of the file"
     }
   ]
 }
