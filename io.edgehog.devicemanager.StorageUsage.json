@@ -1,13 +1,45 @@
 {
   "interface_name": "io.edgehog.devicemanager.StorageUsage",
-  "version_major": 0,
-  "version_minor": 1,
+  "version_major": 1,
+  "version_minor": 0,
   "type": "datastream",
   "ownership": "device",
   "aggregation": "object",
   "mappings": [
     {
-      "endpoint": "/%{label}/totalBytes",
+      "endpoint": "/%{storageId}/mounts",
+      "type": "stringarray",
+      "explicit_timestamp": true,
+      "description": "Optional path mounted on the device",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 5184000
+    },
+    {
+      "endpoint": "/%{storageId}/name",
+      "type": "string",
+      "explicit_timestamp": true,
+      "description": "Optional name of the storage",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 5184000
+    },
+    {
+      "endpoint": "/%{storageId}/fstype",
+      "type": "string",
+      "explicit_timestamp": true,
+      "description": "Optional filesystem of the storage",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 5184000
+    },
+    {
+      "endpoint": "/%{storageId}/kind",
+      "type": "string",
+      "explicit_timestamp": true,
+      "description": "Optional kind of storage",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 5184000
+    },
+    {
+      "endpoint": "/%{storageId}/totalBytes",
       "type": "longinteger",
       "explicit_timestamp": true,
       "description": "Total storage size in bytes",
@@ -15,7 +47,7 @@
       "database_retention_ttl": 5184000
     },
     {
-      "endpoint": "/%{label}/freeBytes",
+      "endpoint": "/%{storageId}/freeBytes",
       "type": "longinteger",
       "explicit_timestamp": true,
       "description": "Available storage bytes",
