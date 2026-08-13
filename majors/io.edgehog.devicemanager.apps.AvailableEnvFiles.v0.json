@@ -1,0 +1,18 @@
+{
+  "interface_name": "io.edgehog.devicemanager.apps.AvailableEnvFiles",
+  "version_major": 0,
+  "version_minor": 1,
+  "type": "properties",
+  "ownership": "device",
+  "description": "The available env files.",
+  "doc": "Exposes the environment files available on the device.",
+  "mappings": [
+    {
+      "allow_unset": true,
+      "endpoint": "/%{env_file_id}/present",
+      "type": "boolean",
+      "description": "Env file availability",
+      "doc": "States whether the environment file with ID `env_file_id` is present on the device."
+    }
+  ]
+}

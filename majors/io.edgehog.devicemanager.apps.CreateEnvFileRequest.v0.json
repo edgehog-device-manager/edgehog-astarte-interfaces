@@ -1,0 +1,40 @@
+{
+  "interface_name": "io.edgehog.devicemanager.apps.CreateEnvFileRequest",
+  "version_major": 0,
+  "version_minor": 1,
+  "type": "datastream",
+  "ownership": "server",
+  "aggregation": "object",
+  "description": "An env file creation request",
+  "doc": "Instructs the runtime to read a file sent trough the file transfer and to parse its content to add environment variables to the container.",
+  "mappings": [
+    {
+      "endpoint": "/env/id",
+      "type": "string",
+      "reliability": "guaranteed",
+      "description": "Create env file request id.",
+      "doc": "Unique id for the file bind."
+    },
+    {
+      "endpoint": "/env/targetId",
+      "type": "string",
+      "reliability": "guaranteed",
+      "description": "the target file id.",
+      "doc": "The target file id. Can be either a file request id or a file storage id. The type specifies which one to use."
+    },
+    {
+      "endpoint": "/env/targetType",
+      "type": "string",
+      "reliability": "guaranteed",
+      "description": "The target file type.",
+      "doc": "The target file type. Possible values are: [storage, request]."
+    },
+    {
+      "endpoint": "/env/deploymentId",
+      "type": "string",
+      "reliability": "guaranteed",
+      "description": "the target deployment id.",
+      "doc": "The Id of a deployment that contains a container with this env file."
+    }
+  ]
+}
