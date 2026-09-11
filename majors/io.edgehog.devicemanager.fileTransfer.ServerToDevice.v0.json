@@ -128,7 +128,7 @@
       "database_retention_policy": "use_ttl",
       "database_retention_ttl": 3600,
       "description": "Destination-specific information on where to write the file to.",
-      "doc": "The value depends on the selected destination type: for 'storage' and 'streaming' it's an empty string, and for 'filesystem' is a path to a file on the device."
+      "doc": "The value depends on the selected destination type: for 'streaming' it's an empty string, for 'filesystem' is a path to a file on the device, for 'storage' is the file name of the resource that gets downloaded."
     }
   ]
 }
