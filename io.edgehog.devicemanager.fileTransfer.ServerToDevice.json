@@ -83,7 +83,7 @@
       "database_retention_policy": "use_ttl",
       "database_retention_ttl": 3600,
       "description": "TTL on how long to keep the file for",
-      "doc": "Optional ttl for how long to keep the file for, if 0 is forever"
+      "doc": "Optional ttl for how long to keep the file for, if 0 the file will be kept indefinitely, this field is ignored for destinationType 'streaming' and 'filesystem'."
     },
     {
       "endpoint": "/request/fileMode",
