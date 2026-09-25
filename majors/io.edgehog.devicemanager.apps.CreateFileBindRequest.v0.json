@@ -1,0 +1,54 @@
+{
+  "interface_name": "io.edgehog.devicemanager.apps.CreateFileBindRequest",
+  "version_major": 0,
+  "version_minor": 1,
+  "type": "datastream",
+  "ownership": "server",
+  "aggregation": "object",
+  "description": "A bind the device must add to the container, for files sent through the file transfer.",
+  "doc": "Datastream instructing the device how to bind a file or directory sent trough the file transfer.",
+  "mappings": [
+    {
+      "endpoint": "/bind/id",
+      "type": "string",
+      "reliability": "guaranteed",
+      "description": "Create file bind request id",
+      "doc": "Unique id for the file bind."
+    },
+    {
+      "endpoint": "/bind/targetId",
+      "type": "string",
+      "reliability": "guaranteed",
+      "description": "the target file id.",
+      "doc": "The target file id. Depending on the type might refer to a file storage or to a file request id."
+    },
+    {
+      "endpoint": "/bind/deploymentId",
+      "type": "string",
+      "reliability": "guaranteed",
+      "description": "the target deployment id.",
+      "doc": "The Id of a deployment that contains a container with this file bind."
+    },
+    {
+      "endpoint": "/bind/targetType",
+      "type": "string",
+      "reliability": "guaranteed",
+      "description": "The target file type.",
+      "doc": "Instructs the runtime on which type of file we're referring to. Its possible values are: [storage, request]."
+    },
+    {
+      "endpoint": "/bind/mountpoint",
+      "type": "string",
+      "reliability": "guaranteed",
+      "description": "the mountpoint into the device.",
+      "doc": "Where the file should be mounted onto the container. Must be an absolute path."
+    },
+    {
+      "endpoint": "/bind/options",
+      "type": "string",
+      "reliability": "guaranteed",
+      "description": "Binding options.",
+      "doc": "The binding options the device manager must follow when binding the file onto the device."
+    }
+  ]
+}

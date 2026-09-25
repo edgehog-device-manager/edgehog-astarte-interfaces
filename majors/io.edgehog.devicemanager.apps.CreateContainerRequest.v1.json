@@ -1,7 +1,7 @@
 {
   "interface_name": "io.edgehog.devicemanager.apps.CreateContainerRequest",
   "version_major": 1,
-  "version_minor": 0,
+  "version_minor": 1,
   "type": "datastream",
   "ownership": "server",
   "aggregation": "object",
@@ -71,6 +71,24 @@
       "reliability": "guaranteed",
       "description": "Container device request ids",
       "doc": "The ids of the devices to request for the container."
+    },
+    {
+      "endpoint": "/container/fileBindIds",
+      "type": "stringarray",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "File bind ids",
+      "doc": "The ids of the file binds required by the container."
+    },
+    {
+      "endpoint": "/container/envFileIds",
+      "type": "stringarray",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "Env file ids",
+      "doc": "The ids of the environment files required by the container."
     },
     {
       "endpoint": "/container/hostname",
