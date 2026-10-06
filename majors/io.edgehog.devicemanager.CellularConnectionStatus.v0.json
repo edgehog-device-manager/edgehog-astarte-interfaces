@@ -10,7 +10,6 @@
       "endpoint": "/%{id}/carrier",
       "type": "string",
       "database_retention_policy": "use_ttl",
-      "database_retention_ttl": 5184000,
       "explicit_timestamp": true,
       "description": "Connectivity carrier operator name."
     },
@@ -18,7 +17,6 @@
       "endpoint": "/%{id}/cellId",
       "type": "longinteger",
       "database_retention_policy": "use_ttl",
-      "database_retention_ttl": 5184000,
       "explicit_timestamp": true,
       "description": "The Cell ID in hexadecimal format, either 16 bit for 2G or 28 bit for 3G or 4G."
     },
@@ -26,7 +24,6 @@
       "endpoint": "/%{id}/mobileCountryCode",
       "type": "integer",
       "database_retention_policy": "use_ttl",
-      "database_retention_ttl": 5184000,
       "explicit_timestamp": true,
       "description": "The mobile country code (MCC) for the device's home network. Valid range: 0–999."
     },
@@ -34,7 +31,6 @@
       "endpoint": "/%{id}/mobileNetworkCode",
       "type": "integer",
       "database_retention_policy": "use_ttl",
-      "database_retention_ttl": 5184000,
       "explicit_timestamp": true,
       "description": "The Mobile Network Code for the device's home network. This is the MNC for GSM, WCDMA, LTE and NR. CDMA uses the System ID (SID). Valid range for MNC: 0–999. Valid range for SID: 0–32767."
     },
@@ -42,7 +38,6 @@
       "endpoint": "/%{id}/localAreaCode",
       "type": "integer",
       "database_retention_policy": "use_ttl",
-      "database_retention_ttl": 5184000,
       "explicit_timestamp": true,
       "description": "Two byte location area code in hexadecimal format."
     },
@@ -50,7 +45,6 @@
       "endpoint": "/%{id}/registrationStatus",
       "type": "string",
       "database_retention_policy": "use_ttl",
-      "database_retention_ttl": 5184000,
       "explicit_timestamp": true,
       "description": "GSM/LTE registration status. Possible values: [NotRegistered, Registered, SearchingOperator, RegistrationDenied, Unknown, RegisteredRoaming]"
     },
@@ -58,7 +52,6 @@
       "endpoint": "/%{id}/rssi",
       "type": "double",
       "database_retention_policy": "use_ttl",
-      "database_retention_ttl": 5184000,
       "explicit_timestamp": true,
       "description": "Signal strength of the device in dBm."
     },
@@ -66,7 +59,6 @@
       "endpoint": "/%{id}/technology",
       "type": "string",
       "database_retention_policy": "use_ttl",
-      "database_retention_ttl": 5184000,
       "explicit_timestamp": true,
       "description": "Access Technology. Possible values [GSM, GSMCompact, UTRAN, GSMwEGPRS, UTRANwHSDPA, UTRANwHSUPA, UTRANwHSDPAandHSUPA, EUTRAN]"
     }
