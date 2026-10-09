@@ -37,6 +37,12 @@
       "type": "stringarray",
       "description": "Supported compressions and archive algorithms for the target.",
       "doc": "List of encoding formats supported by the device for this target, possible values are: [gz, lz4, tar, tar.gz, tar.lz4]."
+    },
+    {
+      "endpoint": "/transfer/hookSupport",
+      "type": "boolean",
+      "description": "Support pre and post file transfer hooks",
+      "doc": "Flag to support setting the pre and post hooks of a transferred file."
     }
   ]
 }
