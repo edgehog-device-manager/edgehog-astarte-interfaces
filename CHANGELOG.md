@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+### Added
+- Add `io.edgehog.devicemanager.apps.resources.ContainerResources` interface
+- Add `io.edgehog.devicemanager.apps.resources.UpdateContainerResources` interface
+- Add `io.edgehog.devicemanager.apps.resources.UpdateResponse` interface
+
 ## [0.12.1] - 2026-10-29
 ### Fix
 - added missing `io.edgehog.devicemanager.apps.CreateDeviceRequest.v0` interface
@@ -18,6 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Allow destination store to receive file names 
 - StorageUsage: change parameter and add fields
 - CreateContainerRequest: add multiple files to the container request
+
 
 ## [0.11.0] - 2026-07-30
 ### Added
