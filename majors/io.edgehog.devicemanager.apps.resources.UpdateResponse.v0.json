@@ -1,0 +1,44 @@
+{
+  "interface_name": "io.edgehog.devicemanager.apps.resources.UpdateResponse",
+  "version_major": 0,
+  "version_minor": 1,
+  "type": "datastream",
+  "ownership": "device",
+  "aggregation": "object",
+  "description": "Response for a container resources update request",
+  "doc": "Used by the device to report the status of updating container resource limits upon completion.",
+  "mappings": [
+    {
+      "endpoint": "/response/id",
+      "type": "string",
+      "required": true,
+      "reliability": "guaranteed",
+      "retention": "stored",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 3600,
+      "description": "Request ID (UUID) associated with the update operation",
+      "doc": "UUID matching the corresponding UpdateContainerResources request."
+    },
+    {
+      "endpoint": "/response/code",
+      "type": "longinteger",
+      "required": true,
+      "reliability": "guaranteed",
+      "retention": "stored",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 3600,
+      "description": "Success or error code for the resource update operation",
+      "doc": "A 0 code indicates success, other values represent standard POSIX error codes."
+    },
+    {
+      "endpoint": "/response/message",
+      "type": "string",
+      "reliability": "guaranteed",
+      "retention": "stored",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 3600,
+      "description": "Optional error message",
+      "doc": "Optional human-readable error details if the update operation failed."
+    }
+  ]
+}
