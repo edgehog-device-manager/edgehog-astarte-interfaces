@@ -1,0 +1,18 @@
+{
+  "interface_name": "io.edgehog.devicemanager.apps.VolumeCommand",
+  "version_major": 0,
+  "version_minor": 1,
+  "type": "datastream",
+  "ownership": "server",
+  "aggregation": "individual",
+  "mappings": [
+    {
+      "endpoint": "/%{volume_id}/command",
+      "type": "string",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "description": "Request execution of a command on a specific volume.",
+      "doc": "Possible values [Delete]."
+    }
+  ]
+}
