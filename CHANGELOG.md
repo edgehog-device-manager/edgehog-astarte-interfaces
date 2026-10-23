@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.12.0] - 2026-10-23
+### Added
+- added `io.edgehog.devicemanager.apps.EnvFiles` interface
+- added `io.edgehog.devicemanager.apps.FileBinds` interface
+
+### Changed
+- Restructure the project to keep all the major interface versions under `majors/`
+- Allow destination store to receive file names 
+- StorageUsage: change parameter and add fields
+- CreateContainerRequest: add multiple files to the container request
+
 ## [0.11.0] - 2026-07-30
 ### Added
 - Add `addInfo` endpoint to `io.edgehog.devicemanager.apps.DeploymentEvent` interface
