@@ -1,0 +1,38 @@
+{
+  "interface_name": "io.edgehog.devicemanager.apps.NetworkEvent",
+  "version_major": 0,
+  "version_minor": 1,
+  "type": "datastream",
+  "ownership": "device",
+  "aggregation": "object",
+  "description": "Container network events sampled data.",
+  "doc": "Allows to stream container network events data, including status, message and additional info.",
+  "mappings": [
+    {
+      "endpoint": "/%{network_id}/status",
+      "type": "string",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "explicit_timestamp": true,
+      "description": "Network status",
+      "doc": "Possible values: [Create, Connect, Disconnect, Destroy, Update, Remove, Prune, Error]"
+    },
+    {
+      "endpoint": "/%{network_id}/message",
+      "type": "string",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "explicit_timestamp": true,
+      "description": "Optional message for the event"
+    },
+    {
+      "endpoint": "/%{network_id}/addInfo",
+      "type": "stringarray",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "explicit_timestamp": true,
+      "description": "Additional info",
+      "doc": "Additional info about the event."
+    }
+  ]
+}
