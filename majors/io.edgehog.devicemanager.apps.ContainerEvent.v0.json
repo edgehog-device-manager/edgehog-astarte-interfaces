@@ -1,0 +1,38 @@
+{
+  "interface_name": "io.edgehog.devicemanager.apps.ContainerEvent",
+  "version_major": 0,
+  "version_minor": 1,
+  "type": "datastream",
+  "ownership": "device",
+  "aggregation": "object",
+  "description": "Container events sampled data.",
+  "doc": "Allows to stream container events data, including status, message and additional info.",
+  "mappings": [
+    {
+      "endpoint": "/%{container_id}/status",
+      "type": "string",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "explicit_timestamp": true,
+      "description": "Container status",
+      "doc": "Possible values: [Create, Start, Restart, Stop, Die, Kill, Destroy, Prune, OOM, Attach, Commit, Copy, Detach, ExecCreate, ExecDetach, ExecStart, ExecDie, Export, HealthStatus, Pause, Rename, Resize, Top, Unpause, Update, Error]"
+    },
+    {
+      "endpoint": "/%{container_id}/message",
+      "type": "string",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "explicit_timestamp": true,
+      "description": "Optional message for the event"
+    },
+    {
+      "endpoint": "/%{container_id}/addInfo",
+      "type": "stringarray",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "explicit_timestamp": true,
+      "description": "Additional info",
+      "doc": "Additional info about the event."
+    }
+  ]
+}
