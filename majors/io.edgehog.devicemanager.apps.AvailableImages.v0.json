@@ -1,7 +1,7 @@
 {
   "interface_name": "io.edgehog.devicemanager.apps.AvailableImages",
   "version_major": 0,
-  "version_minor": 1,
+  "version_minor": 2,
   "description": "Properties available for a specific Docker image on the device",
   "type": "properties",
   "ownership": "device",
@@ -10,7 +10,15 @@
       "allow_unset": true,
       "endpoint": "/%{image_id}/pulled",
       "description": "Pulled image",
+      "doc": "States whether the image with ID `image_id` has been pulled on the device.",
       "type": "boolean"
+    },
+    {
+      "allow_unset": true,
+      "endpoint": "/%{image_id}/status",
+      "description": "Image status",
+      "doc": "Status of the image with ID `image_id` on the device. Possible values: [Missing, Pulling, Pulled, Deleting, Error]",
+      "type": "string"
     }
   ]
 }
