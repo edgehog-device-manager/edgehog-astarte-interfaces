@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Add image pull policy to CreateImageRequest
 - Add more information to AvailableContainers
+- Add more information to AvailableImages
 
 ## [0.12.1] - 2026-10-29
 ### Fix
