@@ -13,6 +13,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - added `io.edgehog.devicemanager.apps.NetworkEvent` interface
 - added `io.edgehog.devicemanager.apps.VolumeEvent` interface
 
+### Changed
+- Add more informations to AvailableContainers
+
 ## [0.12.1] - 2026-10-29
 ### Fix
 - added missing `io.edgehog.devicemanager.apps.CreateDeviceRequest.v0` interface
