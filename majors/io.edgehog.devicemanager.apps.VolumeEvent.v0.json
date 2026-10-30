@@ -1,0 +1,30 @@
+{
+  "interface_name": "io.edgehog.devicemanager.apps.VolumeEvent",
+  "version_major": 0,
+  "version_minor": 1,
+  "type": "datastream",
+  "ownership": "device",
+  "aggregation": "object",
+  "mappings": [
+    {
+      "endpoint": "/%{volume_id}/status",
+      "type": "string",
+      "explicit_timestamp": true,
+      "description": "Volume status",
+      "doc": "Possible values: [Creating, Created, Deleting, Deleted, Error]"
+    },
+    {
+      "endpoint": "/%{volume_id}/message",
+      "type": "string",
+      "explicit_timestamp": true,
+      "description": "Optional message for the event"
+    },
+    {
+      "endpoint": "/%{volume_id}/addInfo",
+      "type": "stringarray",
+      "explicit_timestamp": true,
+      "description": "Additional info",
+      "doc": "Additional info about the event."
+    }
+  ]
+}

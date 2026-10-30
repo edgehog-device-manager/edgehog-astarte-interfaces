@@ -1,7 +1,7 @@
 {
   "interface_name": "io.edgehog.devicemanager.apps.AvailableVolumes",
   "version_major": 0,
-  "version_minor": 1,
+  "version_minor": 2,
   "type": "properties",
   "ownership": "device",
   "mappings": [
@@ -10,6 +10,13 @@
       "endpoint": "/%{volume_id}/created",
       "type": "boolean",
       "description": "Volume created"
+    },
+    {
+      "allow_unset": true,
+      "endpoint": "/%{volume_id}/status",
+      "type": "string",
+      "description": "Current status of the volume on the device.",
+      "doc": "Possible values [Present, Missing, Error, Deleting]"
     }
   ]
 }

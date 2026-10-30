@@ -1,7 +1,7 @@
 {
   "interface_name": "io.edgehog.devicemanager.apps.CreateVolumeRequest",
   "version_major": 0,
-  "version_minor": 1,
+  "version_minor": 2,
   "type": "datastream",
   "ownership": "server",
   "aggregation": "object",
@@ -41,6 +41,15 @@
       "reliability": "guaranteed",
       "description": "Volume driver options",
       "doc": "An array of key=value options to set for the driver. The key cannot contain an `=`."
+    },
+    {
+      "endpoint": "/volume/reclaimPolicy",
+      "type": "string",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "Affect how the deletion of the volume as part of the deployment is handled.",
+      "doc": "Possible values [Retain, Delete]. If the policy is 'Reclaim' this volume won't be deleted when the deployment gets deleted. Otherwise it will be deleted. Delete is the default."
     }
   ]
 }
