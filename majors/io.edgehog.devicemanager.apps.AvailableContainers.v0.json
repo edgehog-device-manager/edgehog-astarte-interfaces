@@ -1,16 +1,49 @@
 {
   "interface_name": "io.edgehog.devicemanager.apps.AvailableContainers",
   "version_major": 0,
-  "version_minor": 1,
+  "version_minor": 2,
   "type": "properties",
   "ownership": "device",
   "mappings": [
     {
       "allow_unset": true,
+      "endpoint": "/%{container_id}/imageId",
+      "type": "string",
+      "description": "Container image",
+      "doc": "The ID (digest) of the image that this container was created from."
+    },
+    {
+      "allow_unset": true,
       "endpoint": "/%{container_id}/status",
       "type": "string",
       "description": "Container status",
-      "doc": "Possible values [Received, Created, Running, Stopped]"
+      "doc": "Possible values [Received, Creating, Created, Running, Stopping, Stopped, Deleting, Error]"
+    },
+    {
+      "allow_unset": true,
+      "endpoint": "/%{container_id}/exitCode",
+      "type": "longinteger",
+      "description": "Last exit code of the container"
+    },
+    {
+      "allow_unset": true,
+      "endpoint": "/%{container_id}/health/status",
+      "type": "string",
+      "description": "Status of the healthcheck",
+      "doc": "Possible values [None, Starting, Healthy, Unhealthy]"
+    },
+    {
+      "allow_unset": true,
+      "endpoint": "/%{container_id}/health/failed",
+      "type": "longinteger",
+      "description": "Number of consecutive failes"
+    },
+    {
+      "allow_unset": true,
+      "endpoint": "/%{container_id}/restartCount",
+      "type": "longinteger",
+      "description": "Number of restart of the container",
+      "doc": "Number of restart of the container since it was created or since the daemon restarted"
     }
   ]
 }
