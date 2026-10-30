@@ -10,7 +10,53 @@
       "endpoint": "/%{container_id}/status",
       "type": "string",
       "description": "Container status",
-      "doc": "Possible values [Received, Created, Running, Stopped]"
-    }
+      "doc": "Possible values [Received, Creating, Created, Running, Stopping, Stopped, Deleting, Error]"
+    },
+    {
+      "allow_unset": true,
+      "endpoint": "/%{container_id}/exitCode",
+      "type": "longinteger",
+      "description": "Last exit code of the container"
+    },
+    {
+      "allow_unset": true,
+      "endpoint": "/%{container_id}/health/status",
+      "type": "string",
+      "description": "Status of the healthcheck",
+      "doc": "Possible values [None, Starting, Healthy, Unhealthy]"
+    },
+    {
+      "allow_unset": true,
+      "endpoint": "/%{container_id}/health/failed",
+      "type": "longinteger",
+      "description": "Number of consecutive failes"
+    },
+    {
+      "allow_unset": true,
+      "endpoint": "/%{container_id}/restartCount",
+      "type": "longinteger",
+      "description": "Number of restart of the container",
+      "doc": "Number of restart of the container since it was created or since the daemon restarted"
+    },
+    {
+      "allow_unset": true,
+      "endpoint": "/%{container_id}/restartCount",
+      "type": "longinteger",
+      "description": "Number of restart of the container",
+      "doc": "Number of restart of the container since it was created or since the daemon restarted"
+    },
+    {
+      "allow_unset": true,
+      "endpoint": "/%{container_id}/sizeRw",
+      "type": "longinteger",
+      "description": "The size of files that have been created or changed by this container.",
+    },
+    {
+      "allow_unset": true,
+      "endpoint": "/%{container_id}/sizeRootFs",
+      "type": "longinteger",
+      "description": "Number of restart of the container",
+      "doc": "Number of restart of the container since it was created or since the daemon restarted"
+    },
   ]
 }
