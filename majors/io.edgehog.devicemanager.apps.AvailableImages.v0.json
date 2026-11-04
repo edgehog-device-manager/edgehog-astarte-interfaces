@@ -1,7 +1,7 @@
 {
   "interface_name": "io.edgehog.devicemanager.apps.AvailableImages",
   "version_major": 0,
-  "version_minor": 1,
+  "version_minor": 2,
   "description": "Properties available for a specific Docker image on the device",
   "type": "properties",
   "ownership": "device",
@@ -10,7 +10,43 @@
       "allow_unset": true,
       "endpoint": "/%{image_id}/pulled",
       "description": "Pulled image",
+      "doc": "States whether the image with ID `image_id` has been pulled on the device.",
       "type": "boolean"
+    },
+    {
+      "allow_unset": true,
+      "endpoint": "/%{image_id}/status",
+      "description": "Image status",
+      "doc": "Status of the image with ID `image_id` on the device. Possible values: [Received, Missing, Pulling, Pulled, Deleting, Error]",
+      "type": "string"
+    },
+    {
+      "allow_unset": true,
+      "endpoint": "/%{image_id}/imageId",
+      "description": "Pulled image",
+      "doc": "ID is the content-addressable ID of an image.",
+      "type": "string"
+    },
+    {
+      "allow_unset": true,
+      "endpoint": "/%{image_id}/repoTags",
+      "description": "List of image names/tags in the local image cache that reference this image.",
+      "doc": "Multiple image tags can refer to the same image, and this list may be empty if no tags reference the image, in which case the image is 'untagged', in which case it can still be referenced by its ID.",
+      "type": "stringarray"
+    },
+    {
+      "allow_unset": true,
+      "endpoint": "/%{image_id}/repoDigests",
+      "description": "Image repository digest",
+      "doc": "List of content-addressable digests of locally available image manifests that the image is referenced from. Multiple manifests can refer to the same image.",
+      "type": "stringarray"
+    },
+    {
+      "allow_unset": true,
+      "endpoint": "/%{image_id}/size",
+      "description": "Pulled image",
+      "doc": "Total size of the image including all layers it is composed of.",
+      "type": "longinteger"
     }
   ]
 }
