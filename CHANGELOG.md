@@ -5,8 +5,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Added
+- added `io.edgehog.devicemanager.apps.ContainerEvent` interface
+- added `io.edgehog.devicemanager.apps.EnvFileEvent` interface
+- added `io.edgehog.devicemanager.apps.FileBindEvent` interface
+- added `io.edgehog.devicemanager.apps.ImageEvent` interface
+- added `io.edgehog.devicemanager.apps.NetworkEvent` interface
+- added `io.edgehog.devicemanager.apps.VolumeEvent` interface
+
 ### Changed
-- Add volume pull policy to CreateImageRequest
+
+- Add image pull policy to CreateImageRequest
 
 ## [0.12.1] - 2026-10-29
 ### Fix
