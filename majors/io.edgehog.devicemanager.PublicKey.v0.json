@@ -1,0 +1,18 @@
+{
+  "interface_name": "io.edgehog.devicemanager.PublicKey",
+  "version_major": 0,
+  "version_minor": 1,
+  "type": "properties",
+  "ownership": "server",
+  "description": "Public keys for container image signature verification.",
+  "doc": "Stores public key data (such as GPG keyrings or certificates) indexed by `certificate_thumbprint`, the lowercase hex-encoded SHA-256 hash of the public key data, used by container image policies for signature verification.",
+  "mappings": [
+    {
+      "endpoint": "/image/signing/%{certificate_thumbprint}",
+      "type": "binaryblob",
+      "allow_unset": true,
+      "description": "Public key data for image signature verification.",
+      "doc": "Binary public key data (e.g. x509 certificate) identified by `certificate_thumbprint`, the lowercase hex-encoded SHA-256 hash of the public key data. Unsetting deletes the key from the device."
+    }
+  ]
+}

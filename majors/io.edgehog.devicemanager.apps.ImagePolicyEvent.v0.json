@@ -1,0 +1,38 @@
+{
+  "interface_name": "io.edgehog.devicemanager.apps.ImagePolicyEvent",
+  "version_major": 0,
+  "version_minor": 1,
+  "type": "datastream",
+  "ownership": "device",
+  "aggregation": "object",
+  "description": "Image policy events sampled data.",
+  "doc": "Allows to stream image policy events data, including status, message and additional info. Policies are indexed by `repository_id`, the lowercase hex-encoded SHA-256 hash of the repository scope string.",
+  "mappings": [
+    {
+      "endpoint": "/%{repository_id}/status",
+      "type": "string",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "explicit_timestamp": true,
+      "description": "Image policy status",
+      "doc": "Possible values: [Created, Removed, Error]"
+    },
+    {
+      "endpoint": "/%{repository_id}/message",
+      "type": "string",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "explicit_timestamp": true,
+      "description": "Optional message for the event"
+    },
+    {
+      "endpoint": "/%{repository_id}/addInfo",
+      "type": "stringarray",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "explicit_timestamp": true,
+      "description": "Additional info",
+      "doc": "Additional info about the event."
+    }
+  ]
+}
