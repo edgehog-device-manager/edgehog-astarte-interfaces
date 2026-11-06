@@ -1,0 +1,39 @@
+{
+  "interface_name": "io.edgehog.devicemanager.apps.SystemPruneRequest",
+  "version_major": 0,
+  "version_minor": 1,
+  "type": "datastream",
+  "ownership": "server",
+  "aggregation": "object",
+  "description": "Request to prune unused container resources on the device.",
+  "doc": "Allows the server to trigger pruning of unused images and/or stopped containers.",
+  "mappings": [
+    {
+      "endpoint": "/prune/requestId",
+      "type": "string",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "System prune request ID",
+      "doc": "Unique ID for the system prune request, matched in SystemPruneResponse."
+    },
+    {
+      "endpoint": "/prune/image",
+      "type": "boolean",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "Prune unused images",
+      "doc": "Whether to prune unused container images."
+    },
+    {
+      "endpoint": "/prune/container",
+      "type": "boolean",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "Prune stopped containers",
+      "doc": "Whether to prune stopped containers."
+    }
+  ]
+}
