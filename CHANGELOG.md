@@ -12,12 +12,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - added `io.edgehog.devicemanager.apps.ImageEvent` interface
 - added `io.edgehog.devicemanager.apps.NetworkEvent` interface
 - added `io.edgehog.devicemanager.apps.VolumeEvent` interface
+- added `io.edgehog.devicemanager.apps.AvailableSecrets` interface
+- added `io.edgehog.devicemanager.apps.CreateSecretRequest` interface
+- added `io.edgehog.devicemanager.apps.AvailableSecretRefs` interface
+- added `io.edgehog.devicemanager.apps.CreateSecretRefRequest` interface
 
 ### Changed
 
 - Add image pull policy to CreateImageRequest
 - Add more information to AvailableContainers
 - Add more information to AvailableImages
+- Add secretRefIds to CreateContainerRequest
 
 ## [0.12.1] - 2026-10-29
 ### Fix
