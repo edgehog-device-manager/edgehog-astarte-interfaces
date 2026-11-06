@@ -1,0 +1,32 @@
+{
+  "interface_name": "io.edgehog.devicemanager.apps.ImagePolicy",
+  "version_major": 0,
+  "version_minor": 1,
+  "type": "properties",
+  "ownership": "server",
+  "description": "Container image signature verification and registry trust policy.",
+  "doc": "Configures the per-repository container image verification policy on the device, modeled after containers-policy.json(5).",
+  "mappings": [
+    {
+      "endpoint": "/policy/%{repository_hash}/repository",
+      "type": "string",
+      "allow_unset": true,
+      "description": "Target container registry or repository scope.",
+      "doc": "The container registry or repository scope to which this policy applies (e.g. `docker.io`, `quay.io/my-org`, or `registry.example.com:5000/team/app`). The path parameter `repository_hash` is a unique identifier (such as a hex-encoded hash of this string) used to key this rule in Astarte."
+    },
+    {
+      "endpoint": "/policy/%{repository_hash}/type",
+      "type": "string",
+      "allow_unset": true,
+      "description": "Policy requirement type for the specified repository.",
+      "doc": "Policy requirement applied to images matching the scope defined in `/policy/%{repository_hash}/repository`. Allowed values: [InsecureAcceptAnything, Reject, SignedBy]."
+    },
+    {
+      "endpoint": "/policy/%{repository_hash}/keyId",
+      "type": "string",
+      "allow_unset": true,
+      "description": "ID of a stored public key for repository SignedBy verification.",
+      "doc": "Optional ID of a trusted public key stored via `io.edgehog.devicemanager.apps.PublicKey` under `/image/signing/%{key_id}` used to verify signatures for images matching the scope defined in `/policy/%{repository_hash}/repository` when `type` is `SignedBy`. Ignored if `type` is `Reject` or `InsecureAcceptAnything`."
+    }
+  ]
+}
