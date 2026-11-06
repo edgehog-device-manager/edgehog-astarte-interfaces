@@ -1,0 +1,18 @@
+{
+  "interface_name": "io.edgehog.devicemanager.apps.PublicKey",
+  "version_major": 0,
+  "version_minor": 1,
+  "type": "properties",
+  "ownership": "server",
+  "description": "Public keys for container image signature verification.",
+  "doc": "Stores public key data (such as GPG keyrings or certificates) indexed by key id, used by container image policies for signature verification.",
+  "mappings": [
+    {
+      "endpoint": "/image/signing/%{key_id}",
+      "type": "binaryblob",
+      "allow_unset": true,
+      "description": "Public key data for image signature verification.",
+      "doc": "Binary public key data (e.g. x509 certificate) identified by `key_id`. Unsetting deletes the key from the device."
+    }
+  ]
+}

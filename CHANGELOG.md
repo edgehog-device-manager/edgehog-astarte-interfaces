@@ -10,7 +10,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - added `io.edgehog.devicemanager.apps.EnvFileEvent` interface
 - added `io.edgehog.devicemanager.apps.FileBindEvent` interface
 - added `io.edgehog.devicemanager.apps.ImageEvent` interface
+- added `io.edgehog.devicemanager.apps.ImagePolicy` interface
 - added `io.edgehog.devicemanager.apps.NetworkEvent` interface
+- added `io.edgehog.devicemanager.PublicKey` interface
 - added `io.edgehog.devicemanager.apps.VolumeEvent` interface
 
 ### Changed

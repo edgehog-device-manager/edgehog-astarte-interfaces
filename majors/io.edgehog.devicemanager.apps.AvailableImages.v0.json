@@ -1,7 +1,7 @@
 {
   "interface_name": "io.edgehog.devicemanager.apps.AvailableImages",
   "version_major": 0,
-  "version_minor": 2,
+  "version_minor": 3,
   "description": "Properties available for a specific Docker image on the device",
   "type": "properties",
   "ownership": "device",
@@ -19,6 +19,13 @@
       "description": "Image status",
       "doc": "Status of the image with ID `image_id` on the device. Possible values: [Received, Missing, Pulling, Pulled, Deleting, Error]",
       "type": "string"
+    },
+    {
+      "allow_unset": true,
+      "endpoint": "/%{image_id}/verified",
+      "description": "Verified image",
+      "doc": "States whether the signature of the image with ID `image_id` has been verified on the device.",
+      "type": "boolean"
     },
     {
       "allow_unset": true,
