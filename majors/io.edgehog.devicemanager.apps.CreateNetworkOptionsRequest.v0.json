@@ -1,0 +1,196 @@
+{
+  "interface_name": "io.edgehog.devicemanager.apps.CreateNetworkOptionsRequest",
+  "version_major": 0,
+  "version_minor": 1,
+  "type": "datastream",
+  "ownership": "server",
+  "aggregation": "object",
+  "description": "Network endpoint configuration for a container on a specific network.",
+  "doc": "Configures the network endpoint settings when connecting a container to a network.",
+  "mappings": [
+    {
+      "endpoint": "/networkOptions/id",
+      "type": "string",
+      "required": true,
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "Create Network Options Request id",
+      "doc": "Unique id for the network options request."
+    },
+    {
+      "endpoint": "/networkOptions/deploymentId",
+      "type": "string",
+      "required": true,
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "Reference to a Deployment using the network options",
+      "doc": "The deployment in which the network options are used, so the device can send deployment events to Astarte for the create request."
+    },
+    {
+      "endpoint": "/networkOptions/containerId",
+      "type": "string",
+      "required": true,
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "Target container id",
+      "doc": "The id of the container to which these network options apply."
+    },
+    {
+      "endpoint": "/networkOptions/networkId",
+      "type": "string",
+      "required": true,
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "Target network id",
+      "doc": "The id of the network to connect with the container."
+    },
+    {
+      "endpoint": "/networkOptions/ipv4Address",
+      "type": "string",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "IPAM IPv4 address",
+      "doc": "IPv4 address for the endpoint's IPAM configuration."
+    },
+    {
+      "endpoint": "/networkOptions/ipv6Address",
+      "type": "string",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "IPAM IPv6 address",
+      "doc": "IPv6 address for the endpoint's IPAM configuration."
+    },
+    {
+      "endpoint": "/networkOptions/linkLocalIps",
+      "type": "stringarray",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "IPAM link-local IP addresses",
+      "doc": "List of link-local IP addresses for the endpoint's IPAM configuration."
+    },
+    {
+      "endpoint": "/networkOptions/links",
+      "type": "stringarray",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "Endpoint links",
+      "doc": "List of links for the endpoint."
+    },
+    {
+      "endpoint": "/networkOptions/macAddress",
+      "type": "string",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "MAC address for the endpoint on this network",
+      "doc": "MAC address for the endpoint on this network. The network driver might ignore this parameter."
+    },
+    {
+      "endpoint": "/networkOptions/aliases",
+      "type": "stringarray",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "Network aliases",
+      "doc": "List of network aliases for the endpoint."
+    },
+    {
+      "endpoint": "/networkOptions/driverOptKeys",
+      "type": "stringarray",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "Driver options keys",
+      "doc": "Keys for the mapping of driver options and values in `driverOptValues`. These options are passed directly to the driver and are driver specific."
+    },
+    {
+      "endpoint": "/networkOptions/driverOptValues",
+      "type": "stringarray",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "Driver options values",
+      "doc": "Values for the mapping of driver options and values in `driverOptKeys`. These options are passed directly to the driver and are driver specific."
+    },
+    {
+      "endpoint": "/networkOptions/gwPriority",
+      "type": "longinteger",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "Gateway priority",
+      "doc": "This property determines which endpoint will provide the default gateway for a container. The endpoint with the highest priority will be used. If multiple endpoints have the same priority, endpoints are lexicographically sorted based on their network name, and the one that sorts first is picked."
+    },
+    {
+      "endpoint": "/networkOptions/gateway",
+      "type": "string",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "Gateway address",
+      "doc": "Gateway address for this network."
+    },
+    {
+      "endpoint": "/networkOptions/ipAddress",
+      "type": "string",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "IPv4 address",
+      "doc": "IPv4 address."
+    },
+    {
+      "endpoint": "/networkOptions/ipPrefixLen",
+      "type": "integer",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "Mask length of the IPv4 address",
+      "doc": "Mask length of the IPv4 address."
+    },
+    {
+      "endpoint": "/networkOptions/ipv6Gateway",
+      "type": "string",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "IPv6 gateway address",
+      "doc": "IPv6 gateway address."
+    },
+    {
+      "endpoint": "/networkOptions/globalIpv6Address",
+      "type": "string",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "Global IPv6 address",
+      "doc": "Global IPv6 address."
+    },
+    {
+      "endpoint": "/networkOptions/globalIpv6PrefixLen",
+      "type": "longinteger",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "Mask length of the global IPv6 address",
+      "doc": "Mask length of the global IPv6 address."
+    },
+    {
+      "endpoint": "/networkOptions/dnsNames",
+      "type": "stringarray",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "List of DNS names for the endpoint",
+      "doc": "List of all DNS names an endpoint has on a specific network. This list is based on the container name, network aliases, container short ID, and hostname. These DNS names are non-fully qualified but can contain several dots. You can get fully qualified DNS names by appending `.<network-name>`. For instance, if container name is `my.ctr` and the network is named `testnet`, `dnsNames` will contain `my.ctr` and the FQDN will be `my.ctr.testnet`."
+    }
+  ]
+}

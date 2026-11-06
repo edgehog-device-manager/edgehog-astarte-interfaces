@@ -1,7 +1,7 @@
 {
   "interface_name": "io.edgehog.devicemanager.apps.CreateContainerRequest",
   "version_major": 1,
-  "version_minor": 1,
+  "version_minor": 2,
   "type": "datastream",
   "ownership": "server",
   "aggregation": "object",
@@ -44,6 +44,15 @@
       "reliability": "guaranteed",
       "description": "Container network ids",
       "doc": "The ids of the network to connect with the container."
+    },
+    {
+      "endpoint": "/container/networkOptionsIds",
+      "type": "stringarray",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "reliability": "guaranteed",
+      "description": "Container network options ids",
+      "doc": "The ids of the network options to use when connecting the container to networks."
     },
     {
       "endpoint": "/container/volumeIds",
