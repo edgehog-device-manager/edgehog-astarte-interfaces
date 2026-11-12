@@ -1,0 +1,39 @@
+{
+  "interface_name": "io.edgehog.devicemanager.apps.resources.UpdateContainerResources",
+  "version_major": 0,
+  "version_minor": 1,
+  "type": "datastream",
+  "ownership": "server",
+  "aggregation": "object",
+  "description": "Update container resource limits",
+  "doc": "Request to dynamically update CPU quota and max memory limits for containers on the device.",
+  "mappings": [
+    {
+      "endpoint": "/update/requestId",
+      "type": "string",
+      "required": true,
+      "reliability": "guaranteed",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 3600,
+      "description": "Unique request identifier (UUID)"
+    },
+    {
+      "endpoint": "/update/cpuQuota",
+      "type": "integer",
+      "reliability": "guaranteed",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 3600,
+      "description": "New CPU quota percentage",
+      "doc": "Optional new CPU quota percentage where 80 represents 80% of the time on a single CPU core."
+    },
+    {
+      "endpoint": "/update/maxMemory",
+      "type": "longinteger",
+      "reliability": "guaranteed",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 3600,
+      "description": "New maximum physical memory in bytes",
+      "doc": "Optional new maximum physical memory limit in bytes."
+    }
+  ]
+}
