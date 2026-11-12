@@ -6,12 +6,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
-- added `io.edgehog.devicemanager.apps.ContainerEvent` interface
-- added `io.edgehog.devicemanager.apps.EnvFileEvent` interface
-- added `io.edgehog.devicemanager.apps.FileBindEvent` interface
-- added `io.edgehog.devicemanager.apps.ImageEvent` interface
-- added `io.edgehog.devicemanager.apps.NetworkEvent` interface
-- added `io.edgehog.devicemanager.apps.VolumeEvent` interface
+- Added `io.edgehog.devicemanager.apps.ContainerEvent` interface
+- Added `io.edgehog.devicemanager.apps.EnvFileEvent` interface
+- Added `io.edgehog.devicemanager.apps.FileBindEvent` interface
+- Added `io.edgehog.devicemanager.apps.ImageEvent` interface
+- Added `io.edgehog.devicemanager.apps.NetworkEvent` interface
+- Added `io.edgehog.devicemanager.apps.VolumeEvent` interface
+- Added `io.edgehog.devicemanager.apps.VolumeEvent` interface
+- Added `io.edgehog.devicemanager.apps.AvailableNetworkOptions` interface 
+- Added `io.edgehog.devicemanager.apps.CreateNetworkOptionsRequest` interface
 
 ### Changed
 

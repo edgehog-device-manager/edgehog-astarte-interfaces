@@ -1,0 +1,18 @@
+{
+  "interface_name": "io.edgehog.devicemanager.apps.AvailableNetworkOptions",
+  "version_major": 0,
+  "version_minor": 1,
+  "type": "properties",
+  "ownership": "device",
+  "description": "The available network options.",
+  "doc": "Exposes the container network options available on the device.",
+  "mappings": [
+    {
+      "allow_unset": true,
+      "endpoint": "/%{network_options_id}/status",
+      "type": "string",
+      "description": "Network options status",
+      "doc": "The status of the network options with ID `network_options_id`, available values are: [Present, Error]."
+    }
+  ]
+}
