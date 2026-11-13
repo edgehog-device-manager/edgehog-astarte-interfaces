@@ -1,5 +1,5 @@
 {
-  "interface_name": "io.edgehog.devicemanager.apps.PublicKey",
+  "interface_name": "io.edgehog.devicemanager.PublicKey",
   "version_major": 0,
   "version_minor": 1,
   "type": "properties",

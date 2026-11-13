@@ -1,0 +1,38 @@
+{
+  "interface_name": "io.edgehog.devicemanager.apps.PublicKeyEvent",
+  "version_major": 0,
+  "version_minor": 1,
+  "type": "datastream",
+  "ownership": "device",
+  "aggregation": "object",
+  "description": "Public key events sampled data.",
+  "doc": "Allows to stream public key events data, including status, message and additional info.",
+  "mappings": [
+    {
+      "endpoint": "/%{key_id}/status",
+      "type": "string",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "explicit_timestamp": true,
+      "description": "Public key status",
+      "doc": "Possible values: [Created, Error]"
+    },
+    {
+      "endpoint": "/%{key_id}/message",
+      "type": "string",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "explicit_timestamp": true,
+      "description": "Optional message for the event"
+    },
+    {
+      "endpoint": "/%{key_id}/addInfo",
+      "type": "stringarray",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 31556952,
+      "explicit_timestamp": true,
+      "description": "Additional info",
+      "doc": "Additional info about the event."
+    }
+  ]
+}

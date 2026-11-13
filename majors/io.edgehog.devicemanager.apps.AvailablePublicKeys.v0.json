@@ -1,0 +1,18 @@
+{
+  "interface_name": "io.edgehog.devicemanager.apps.AvailablePublicKeys",
+  "version_major": 0,
+  "version_minor": 1,
+  "type": "properties",
+  "ownership": "device",
+  "description": "The available public keys.",
+  "doc": "Exposes the public keys validated and available on the device for container image signature verification, including status.",
+  "mappings": [
+    {
+      "allow_unset": true,
+      "endpoint": "/%{key_id}/status",
+      "type": "string",
+      "description": "Public key status",
+      "doc": "Possible values: [Present, Error, Missing]"
+    }
+  ]
+}
