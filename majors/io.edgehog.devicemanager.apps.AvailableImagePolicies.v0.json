@@ -1,0 +1,18 @@
+{
+  "interface_name": "io.edgehog.devicemanager.apps.AvailableImagePolicies",
+  "version_major": 0,
+  "version_minor": 1,
+  "type": "properties",
+  "ownership": "device",
+  "description": "The available image policies.",
+  "doc": "Exposes the container image policies validated and available on the device, including status. Policies are indexed by `registry_id`, a UUID v5 derived from the repository scope string using `NAMESPACE_URL`.",
+  "mappings": [
+    {
+      "allow_unset": true,
+      "endpoint": "/%{registry_id}/status",
+      "type": "string",
+      "description": "Image policy status",
+      "doc": "Possible values: [Present, Error, Missing]"
+    }
+  ]
+}
