@@ -1,7 +1,7 @@
 {
   "interface_name": "io.edgehog.devicemanager.storage.Response",
   "version_major": 0,
-  "version_minor": 1,
+  "version_minor": 2,
   "type": "datastream",
   "ownership": "device",
   "aggregation": "object",
@@ -23,7 +23,7 @@
       "database_retention_policy": "use_ttl",
       "database_retention_ttl": 3600,
       "description": "Type of storage response",
-      "doc": "Specifies the direction of the transfer. Allowed values: 'delete'."
+      "doc": "Specifies the type of storage operation. Allowed values: 'delete', 'move'."
     },
     {
       "endpoint": "/request/code",

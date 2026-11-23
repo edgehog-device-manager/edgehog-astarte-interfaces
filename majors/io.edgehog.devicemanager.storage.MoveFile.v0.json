@@ -1,0 +1,36 @@
+{
+  "interface_name": "io.edgehog.devicemanager.storage.MoveFile",
+  "version_major": 0,
+  "version_minor": 1,
+  "type": "datastream",
+  "aggregation": "object",
+  "ownership": "server",
+  "description": "Move a file stored on a device",
+  "doc": "Requests moving a file stored on the device to another storage location identified by a file UUID. The source file must be one published through the `io.edgehog.devicemanager.storage.File` interface. If a file already exists at the destination UUID, it is only overwritten when `force` is true.",
+  "mappings": [
+    {
+      "endpoint": "/request/id",
+      "type": "string",
+      "description": "ID of the move request",
+      "doc": "ID of the request which will be used to send the `io.edgehog.devicemanager.storage.Response`."
+    },
+    {
+      "endpoint": "/request/source",
+      "type": "string",
+      "description": "ID of the file to move",
+      "doc": "UUID of the source file on the device published through the `io.edgehog.devicemanager.storage.File` interface."
+    },
+    {
+      "endpoint": "/request/destination",
+      "type": "string",
+      "description": "ID of the destination file",
+      "doc": "UUID identifying the destination `io.edgehog.devicemanager.storage.File`. If a file with this ID already exists, the operation fails unless `force` is true."
+    },
+    {
+      "endpoint": "/request/force",
+      "type": "boolean",
+      "description": "Allow the move of source files that are in use",
+      "doc": "When true forces the deletion of the source file even if it is currently in use. When false, the move fails if the source file is in use. Defaults to false."
+    }
+  ]
+}
