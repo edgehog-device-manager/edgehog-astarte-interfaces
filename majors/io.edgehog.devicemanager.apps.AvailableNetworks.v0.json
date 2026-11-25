@@ -1,7 +1,7 @@
 {
   "interface_name": "io.edgehog.devicemanager.apps.AvailableNetworks",
   "version_major": 0,
-  "version_minor": 1,
+  "version_minor": 2,
   "type": "properties",
   "ownership": "device",
   "mappings": [
@@ -9,7 +9,55 @@
       "allow_unset": true,
       "endpoint": "/%{network_id}/created",
       "type": "boolean",
-      "description": "Network was created"
+      "description": "Indicates whether the Docker network has been successfully created."
+    },
+    {
+      "allow_unset": true,
+      "endpoint": "/%{network_id}/status",
+      "type": "string",
+      "description": "Network status",
+      "doc": "Status of the network with ID `network_id` on the device. Possible values: [Receive, Missing, Present, Error]"
+    },
+    {
+      "allow_unset": true,
+      "endpoint": "/%{network_id}/status/ipam/subnets",
+      "type": "stringarray",
+      "description": "List of subnets defined in the network's IPAM configuration, as reported by Docker."
+    },
+    {
+      "allow_unset": true,
+      "endpoint": "/%{network_id}/status/ipam/subnets/ipsInUse",
+      "type": "longintegerarray",
+      "description": "Number of IP addresses currently in use or reserved within each subnet.",
+      "doc": "Each value corresponds to the subnet at the same index in status/ipam/subnets. The values are derived from Docker's network inspection data."
+    },
+    {
+      "allow_unset": true,
+      "endpoint": "/%{network_id}/status/ipam/subnets/dynamicIpsAvailable",
+      "type": "longintegerarray",
+      "description": "Number of IP addresses available for dynamic allocation within each subnet's IP range.",
+      "doc": "Each value corresponds to the subnet at the same index in status/ipam/subnets. The values are derived from Docker's network inspection data."
+    },
+    {
+      "allow_unset": true,
+      "endpoint": "/%{network_id}/ipam/config/subnets",
+      "type": "stringarray",
+      "description": "List of subnets configured in the Docker network's IPAM settings.",
+      "doc": "Contains the subnet definitions from the network's IPAM configuration as reported by Docker."
+    },
+    {
+      "allow_unset": true,
+      "endpoint": "/%{network_id}/ipam/config/ipRanges",
+      "type": "stringarray",
+      "description": "List of IP ranges configured for dynamic address allocation.",
+      "doc": "Each value corresponds to the subnet at the same index in ipam/config/subnets. These ranges are obtained from Docker's IPAM configuration."
+    },
+    {
+      "allow_unset": true,
+      "endpoint": "/%{network_id}/ipam/config/gateways",
+      "type": "stringarray",
+      "description": "List of gateway addresses configured for each subnet.",
+      "doc": "Each value corresponds to the subnet at the same index in ipam/config/subnets. These gateway addresses are obtained from Docker's IPAM configuration."
     }
   ]
 }
