@@ -1,0 +1,25 @@
+{
+  "interface_name": "io.edgehog.devicemanager.apps.resources.ContainerResources",
+  "version_major": 0,
+  "version_minor": 1,
+  "type": "properties",
+  "ownership": "device",
+  "description": "Container resource limits",
+  "doc": "Current resource limits applied to all containers managed by the device runtime.",
+  "mappings": [
+    {
+      "endpoint": "/resources/cpuQuota",
+      "type": "integer",
+      "allow_unset": true,
+      "description": "CPU quota percentage",
+      "doc": "Percentage value of the CPU where 80 represents 80% of the time on a single CPU core."
+    },
+    {
+      "endpoint": "/resources/maxMemory",
+      "type": "longinteger",
+      "allow_unset": true,
+      "description": "Maximum memory in bytes",
+      "doc": "Absolute limit of physical memory usage in bytes."
+    }
+  ]
+}
