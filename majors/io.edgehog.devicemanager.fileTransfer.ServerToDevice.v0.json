@@ -1,7 +1,7 @@
 {
   "interface_name": "io.edgehog.devicemanager.fileTransfer.ServerToDevice",
   "version_major": 0,
-  "version_minor": 1,
+  "version_minor": 2,
   "type": "datastream",
   "ownership": "server",
   "aggregation": "object",
@@ -129,6 +129,60 @@
       "database_retention_ttl": 3600,
       "description": "Destination-specific information on where to write the file to.",
       "doc": "The value depends on the selected destination type: for 'streaming' it's an empty string, for 'filesystem' is a path to a file on the device, for 'storage' is the file name of the resource that gets downloaded."
+    },
+    {
+      "endpoint": "/request/preHook",
+      "type": "stringarray",
+      "reliability": "guaranteed",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 3600,
+      "description": "Pre request hook",
+      "doc": "Commands to execute before the file is requested. The command must succeed (e.g. exit code 0 on unix platforms) or the file transfer request will error. The following environment variables will be exported: $FT_REQUEST_ID as the file transfer request id, $FT_REQUEST_TARGET_TYPE as a value for the destination type, $FT_REQUEST_TARGET as optional a value of the destination, and $FT_REQUEST_PATH for the absolute path of the file"
+    },
+    {
+      "endpoint": "/request/preHookTimeout",
+      "type": "longinteger",
+      "reliability": "guaranteed",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 3600,
+      "description": "Optional timeout in seconds for the pre request hook",
+      "doc": "Optional timeout of the pre request hook, if not present the device will use a default value."
+    },
+    {
+      "endpoint": "/request/postHook",
+      "type": "stringarray",
+      "reliability": "guaranteed",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 3600,
+      "description": "Post request hook",
+      "doc": "Commands to execute asfter the file is requested. The command must succeed (e.g. exit code 0 on unix platforms) or the file transfer request will error. The following environment variables will be exported: $FT_REQUEST_ID as the file transfer request id, $FT_REQUEST_TARGET_TYPE as a value for the destination type, $FT_REQUEST_TARGET as optional a value of the destination, and $FT_REQUEST_PATH for the absolute path of the file"
+    },
+    {
+      "endpoint": "/request/postHookTimeout",
+      "type": "stringarray",
+      "reliability": "guaranteed",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 3600,
+      "description": "Optional timeout in seconds for the post request hook",
+      "doc": "Optional timeout of the post request hook, if not present the device will use a default value."
+    },
+    {
+      "endpoint": "/request/hookUid",
+      "type": "longinteger",
+      "reliability": "guaranteed",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 3600,
+      "description": "Optional unix uid to run the hook",
+      "doc": "Optional uid to run the hook with, only available on device that publish the unixPermission capability."
+    },
+    {
+      "endpoint": "/request/hookGid",
+      "type": "longinteger",
+      "reliability": "guaranteed",
+      "database_retention_policy": "use_ttl",
+      "database_retention_ttl": 3600,
+      "description": "Optional unix gid to run the hook",
+      "doc": "Optional gid to run the hook with, only available on device that publish the unixPermission capability."
     }
   ]
 }
